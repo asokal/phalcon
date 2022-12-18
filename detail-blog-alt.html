@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/main.min.js"></script>
+<title>Phalcon</title>
+</head>
+<body>
+	<header class="header">
+	<div class="container">
+		<div class="header__left">
+			<button class="header-nav__burger" onclick="o2.header.openMobileNav(this);">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+
+			<div class="header__logo">
+				<a href="#"></a>
+
+				<div class="header__sitename">Framework</div>
+			</div>
+
+
+			<ul class="header-nav">
+				<li class="active">
+					<a href="#">
+						Discussions
+				</li>
+
+				<li>
+					<a href="#">
+						Activity
+					</a>
+				</li>
+
+				<li class="expand">
+					<a href="#">
+						Categories
+					</a>
+
+					<div class="header-dropdown-wrapper">
+						<ul class="header-dropdown header-dropdown--cat">
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="expand">
+					<a href="#">
+						Ecosystem
+					</a>
+
+					<div class="header-dropdown-wrapper">
+						<ul class="header-dropdown header-dropdown--eco">
+							<li class="header-dropdown__title">News</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Twitter</a>
+									</li>
+
+									<li>
+										<a href="#">Facebook</a>
+									</li>
+
+									<li>
+										<a href="#">Blog</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="header-dropdown__title">Help</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Forum</a>
+									</li>
+
+									<li>
+										<a href="#">Discord</a>
+									</li>
+
+									<li>
+										<a href="#">Meeputs</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+
+			<nav class="header-nav--mobile _navToggle" onclick="event.stopPropagation();">
+				<input type="text" class="header__search" placeholder="Search...">
+				<ul>
+					<li>
+						<a href="#">Download</a>
+					</li>
+					<li>
+						<a href="#">Documentation</a>
+					</li>
+					<li class="extendable extended">
+						<a href="#">Ecosystem</a>
+
+						<ul class="header-dropdown--mobile">
+							<li class="header-dropdown--mobile__title">News</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Twitter</a>
+									</li>
+
+									<li>
+										<a href="#">Facebook</a>
+									</li>
+
+									<li>
+										<a href="#">Blog</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="header-dropdown--mobile__title">Help</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Forum</a>
+									</li>
+
+									<li>
+										<a href="#">Discord</a>
+									</li>
+
+									<li>
+										<a href="#">Meeputs</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+					<li class="extendable extended">
+						<a href="#">
+							<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+							English
+						</a>
+						<ul class="header-dropdown--mobile header-dropdown--mobile-lang">
+							<li>
+								<a href="/cs-cz">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/106fae2ab93e1951f2125508f6ac6e08312f04f7/cs-cz.png" alt="Český">
+									Český
+								</a>
+							</li>
+							<li>
+								<a href="/de-de">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9d091161f3383cae8f26f3f8ef37938619e9484e/de-de.png" alt="Deutsch">
+									Deutsch
+								</a>
+							</li>
+							<li>
+								<a href="/el-gr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/cfbaefa507cd599b34109fd7c4b977c413d31f51/el-gr.png" alt="Ελληνικά">
+									Ελληνικά
+								</a>
+							</li>
+							<li>
+								<a href="/en-us">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+									English
+								</a>
+							</li>
+							<li>
+								<a href="/es-es">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/6e027e3c4dd6c445d327c3d21627c29e2cf67496/es-es.png" alt="Spanish">
+									Spanish
+								</a>
+							</li>
+							<li>
+								<a href="/fa-ir">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/ce62f31ca0885abfd85f8819090aaed94428e3d1/fa-ir.png" alt="Persian">
+									Persian
+								</a>
+							</li>
+							<li>
+								<a href="/fr-fr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7c38f7c5a94eef016859bc30d6daeb4cf2a3f883/fr-fr.png" alt="Française">
+									Française
+								</a>
+							</li>
+							<li>
+								<a href="/hu-hu">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d8190214169e4166df000d4f1972e78179bde96b/hu-hu.png" alt="Hungarian">
+									Hungarian
+								</a>
+							</li>
+							<li>
+								<a href="/id-id">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/c39ba9545bd55927dc43adf829dcbf22a1e0b7b4/id-id.png" alt="Indonesian">
+									Indonesian
+								</a>
+							</li>
+							<li>
+								<a href="/ja-jp">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2af3a51934e5cfd3a3a8fb32d56a733dfcd1045d/ja-jp.png" alt="Japanese">
+									Japanese
+								</a>
+							</li>
+							<li>
+								<a href="/ka-ge">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/bfa049f7fe40592ccfa4fae6c49d2c4bf2bff7ea/cb33f/assets/images/flags/ka-ge.png" alt="English">
+									English
+								</a>
+							</li>
+							<li>
+								<a href="/ko-kr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/f21f8d54b37715bfa217c493e6184941ad1a6ec6/ko-kr.png" alt="Korean">
+									Korean
+								</a>
+							</li>
+							<li>
+								<a href="/lv-lv">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/5b8003e3ac8a686c5f5ec2ec9c5cbabc19196601/lv-lv.png" alt="Latviski">
+									Latviski
+								</a>
+							</li>
+							<li>
+								<a href="/pt-br">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/2c878c62b2d4c38f088185da48f93019d0fcf825/6d981/assets/images/flags/pt-br.png" alt="Português (Brazil)">
+									Português (Brazil)
+								</a>
+							</li>
+							<li>
+								<a href="/ro-ro">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d9f5375b28fa82b6865408de568aba7515705806/ro-ro.png" alt="Română">
+									Română
+								</a>
+							</li>
+							<li>
+								<a href="/ru-ru">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/13dfbab8513aee8db39b2ffe5b1d90f0f941a028/ru-ru.png" alt="Pусский">
+									Pусский
+								</a>
+							</li>
+							<li>
+								<a href="/tr-tr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2d7ef3df68c4e17eee8e63587f1b7542f9842cb3/tr-tr.png" alt="Türkçe">
+									Türkçe
+								</a>
+							</li>
+							<li>
+								<a href="/uk-ua">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7ce4aca8e1b282211d4805c8768ae599dd18b397/uk-ua.png" alt="Ukranian">
+									Ukranian
+								</a>
+							</li>
+							<li>
+								<a href="/zh-cn">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2b65fd5d1a8a8b24ae022f2db7f68127326039c6/zh-cn.png" alt="简体中文">
+									简体中文
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="header__right">
+			<div class="header__lang expand">
+				<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+
+				<div class="header-dropdown-wrapper">
+					<ul class="header-dropdown header-dropdown--lang">
+						<li>
+							<a href="/cs-cz">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/106fae2ab93e1951f2125508f6ac6e08312f04f7/cs-cz.png" alt="Český">
+								Český
+							</a>
+						</li>
+						<li>
+							<a href="/de-de">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9d091161f3383cae8f26f3f8ef37938619e9484e/de-de.png" alt="Deutsch">
+								Deutsch
+							</a>
+						</li>
+						<li>
+							<a href="/el-gr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/cfbaefa507cd599b34109fd7c4b977c413d31f51/el-gr.png" alt="Ελληνικά">
+								Ελληνικά
+							</a>
+						</li>
+						<li>
+							<a href="/en-us">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+								English
+							</a>
+						</li>
+						<li>
+							<a href="/es-es">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/6e027e3c4dd6c445d327c3d21627c29e2cf67496/es-es.png" alt="Spanish">
+								Spanish
+							</a>
+						</li>
+						<li>
+							<a href="/fa-ir">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/ce62f31ca0885abfd85f8819090aaed94428e3d1/fa-ir.png" alt="Persian">
+								Persian
+							</a>
+						</li>
+						<li>
+							<a href="/fr-fr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7c38f7c5a94eef016859bc30d6daeb4cf2a3f883/fr-fr.png" alt="Française">
+								Française
+							</a>
+						</li>
+						<li>
+							<a href="/hu-hu">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d8190214169e4166df000d4f1972e78179bde96b/hu-hu.png" alt="Hungarian">
+								Hungarian
+							</a>
+						</li>
+						<li>
+							<a href="/id-id">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/c39ba9545bd55927dc43adf829dcbf22a1e0b7b4/id-id.png" alt="Indonesian">
+								Indonesian
+							</a>
+						</li>
+						<li>
+							<a href="/ja-jp">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2af3a51934e5cfd3a3a8fb32d56a733dfcd1045d/ja-jp.png" alt="Japanese">
+								Japanese
+							</a>
+						</li>
+						<li>
+							<a href="/ka-ge">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/bfa049f7fe40592ccfa4fae6c49d2c4bf2bff7ea/cb33f/assets/images/flags/ka-ge.png" alt="English">
+								English
+							</a>
+						</li>
+						<li>
+							<a href="/ko-kr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/f21f8d54b37715bfa217c493e6184941ad1a6ec6/ko-kr.png" alt="Korean">
+								Korean
+							</a>
+						</li>
+						<li>
+							<a href="/lv-lv">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/5b8003e3ac8a686c5f5ec2ec9c5cbabc19196601/lv-lv.png" alt="Latviski">
+								Latviski
+							</a>
+						</li>
+						<li>
+							<a href="/pt-br">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/2c878c62b2d4c38f088185da48f93019d0fcf825/6d981/assets/images/flags/pt-br.png" alt="Português (Brazil)">
+								Português (Brazil)
+							</a>
+						</li>
+						<li>
+							<a href="/ro-ro">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d9f5375b28fa82b6865408de568aba7515705806/ro-ro.png" alt="Română">
+								Română
+							</a>
+						</li>
+						<li>
+							<a href="/ru-ru">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/13dfbab8513aee8db39b2ffe5b1d90f0f941a028/ru-ru.png" alt="Pусский">
+								Pусский
+							</a>
+						</li>
+						<li>
+							<a href="/tr-tr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2d7ef3df68c4e17eee8e63587f1b7542f9842cb3/tr-tr.png" alt="Türkçe">
+								Türkçe
+							</a>
+						</li>
+						<li>
+							<a href="/uk-ua">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7ce4aca8e1b282211d4805c8768ae599dd18b397/uk-ua.png" alt="Ukranian">
+								Ukranian
+							</a>
+						</li>
+						<li>
+							<a href="/zh-cn">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2b65fd5d1a8a8b24ae022f2db7f68127326039c6/zh-cn.png" alt="简体中文">
+								简体中文
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<input type="text" class="header__search" placeholder="Search...">
+			<div class="header__github">
+				<a href="#">
+					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13.4557 11.4235C12.6752 11.4235 12.0422 12.2987 12.0422 13.3791C12.0422 14.4598 12.6752 15.3354 13.4557 15.3354C14.2357 15.3354 14.8683 14.4598 14.8683 13.3791C14.8685 12.2987 14.2357 11.4235 13.4557 11.4235ZM18.3754 6.33304C18.5363 5.93609 18.5443 3.68065 17.6863 1.52174C17.6863 1.52174 15.7174 1.73761 12.7385 3.78174C12.1141 3.60935 11.0567 3.52304 10 3.52304C8.94326 3.52304 7.8863 3.60913 7.2613 3.78152C4.28239 1.73761 2.31413 1.52174 2.31413 1.52174C1.45587 3.68065 1.46348 5.93609 1.62457 6.33304C0.616087 7.42804 0 8.74304 0 10.5398C0 18.3511 6.48022 18.4763 8.11609 18.4763C8.4863 18.4763 9.22217 18.4772 10 18.4783C10.7778 18.4772 11.5141 18.4763 11.8839 18.4763C13.5198 18.4763 20 18.3511 20 10.5398C20 8.74304 19.3839 7.42804 18.3754 6.33304ZM10.0307 17.5161H9.96957C5.86978 17.5161 2.67717 17.0265 2.67717 13.0422C2.67717 12.088 3.01391 11.202 3.81391 10.4667C5.14891 9.24152 7.40674 9.89044 9.96957 9.89044C9.97935 9.89044 9.98978 9.89022 10.0002 9.88978C10.0109 9.89022 10.0211 9.89044 10.0309 9.89044C12.5937 9.89044 14.8522 9.24174 16.1865 10.4667C16.9865 11.202 17.3233 12.088 17.3233 13.0422C17.323 17.0265 14.1304 17.5161 10.0307 17.5161ZM6.54435 11.4235C5.76435 11.4235 5.13174 12.2987 5.13174 13.3791C5.13174 14.4598 5.76435 15.3354 6.54435 15.3354C7.32522 15.3354 7.95783 14.4598 7.95783 13.3791C7.95761 12.2987 7.325 11.4235 6.54435 11.4235Z" fill="white"/>
+					</svg>
+				</a>
+			</div>
+			<div class="header__discord">
+				<a href="#">
+					<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 245 240">
+						<style>.st0{fill:#FFFFFF;}</style>
+						<path class="st0" d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"/>
+						<path class="st0" d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+	<main class="wrapper">
+    <div class="phalcon-blog">
+      <div class="container">
+        <div class="phalcon-blog__main">
+                            <div class="phalcon-blog-detail">
+                    <h2 itemprop="name headline" class="headline">
+                        Phalcon License
+                    </h2>
+                    <p>
+                        Copyright (c) 2011-2017, Phalcon Framework Team All rights reserved.
+                    </p>
+                    <p>
+                        Redistribution and use in source and binary forms, with or
+                        without modification, are permitted provided that the
+                        following conditions are met:
+                    </p>
+                    <ul>
+                        <li>
+                            Redistributions of source code must retain the above
+                            copyright notice, this list of conditions and the
+                            following disclaimer.
+                        </li>
+                        <li>
+                            Redistributions in binary form must reproduce the above
+                            copyright notice, this list of conditions and the following
+                            disclaimer in the documentation and/or other materials
+                            provided with the distribution.
+                        </li>
+                        <li>
+                            Neither the name of the Phalcon nor the names of its
+                            contributors may be used to endorse or promote products
+                            derived from this software without specific prior written
+                            permission.
+                        </li>
+                    </ul>
+                    <p>
+                        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+                        CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+                        WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+                        WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+                        PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
+                        PHALCON FRAMEWORK TEAM BE LIABLE FOR ANY DIRECT, INDIRECT,
+                        INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+                        (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+                        GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+                        BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+                        OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+                        TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+                        WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+                        THE POSSIBILITY OF SUCH DAMAGE.
+                    </p>
+                </div>
+                <div class="phalcon-blog-detail">
+                    <h2 itemprop="name headline" class="headline">
+                        PHP License
+                    </h2>
+                    <p>
+                        The PHP License, version 3.01
+                        <br>
+                        Copyright (c) 1999 - 2017 The PHP Group. All rights reserved.
+                    </p>
+                    <p>
+                        Redistribution and use in source and binary forms, with or
+                        without modification, is permitted provided that the following
+                        conditions are met:
+                    </p>
+                    <ol>
+                        <li>
+                          Redistributions of source code must retain the above copyright
+                             notice, this list of conditions and the following disclaimer.
+                        </li>
+                        <li>
+                          Redistributions in binary form must reproduce the above copyright
+                             notice, this list of conditions and the following disclaimer in
+                             the documentation and/or other materials provided with the
+                             distribution.
+                        </li>
+                        <li>
+                          The name "PHP" must not be used to endorse or promote products
+                             derived from this software without prior written permission. For
+                             written permission, please contact group@php.net.
+                        </li>
+                        <li>
+                          Products derived from this software may not be called "PHP", nor
+                             may "PHP" appear in their name, without prior written permission
+                             from group@php.net.  You may indicate that your software works in
+                             conjunction with PHP by saying "Foo for PHP" instead of calling
+                             it "PHP Foo" or "phpfoo"
+                        </li>
+                        <li>
+                          The PHP Group may publish revised and/or new versions of the
+                             license from time to time. Each version will be given a
+                             distinguishing version number.
+                             Once covered code has been published under a particular version
+                             of the license, you may always continue to use it under the terms
+                             of that version. You may also choose to use such covered code
+                             under the terms of any subsequent version of the license
+                             published by the PHP Group. No one other than the PHP Group has
+                             the right to modify the terms applicable to covered code created
+                             under this License.
+                        </li>
+                        <li>
+                          Redistributions of any form whatsoever must retain the following
+                             acknowledgment:
+                             "This product includes PHP software, freely available from
+                              <a href="http://www.php.net/software">http://www.php.net/software</a>".
+                        </li>
+                    </ol>
+                    <p>
+                        THIS SOFTWARE IS PROVIDED BY THE PHP DEVELOPMENT TEAM ``AS IS'' AND
+                        ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+                        THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+                        PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE PHP
+                        DEVELOPMENT TEAM OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+                        INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+                        (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+                        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+                        HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+                        STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+                        ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+                        OF THE POSSIBILITY OF SUCH DAMAGE.
+                    </p>
+                    <p>
+                        This software consists of voluntary contributions made by many
+                        individuals on behalf of the PHP Group.
+                    </p>
+                    <p>
+                        The PHP Group can be contacted via Email at group@php.net.
+                    </p>
+                    <p>
+                        For more information on the PHP Group and the PHP project,
+                        please see <a href="http://www.php.net">http://www.php.net</a>.
+                    </p>
+                    <p>
+                        PHP includes the Zend Engine, freely available at
+                        <a href="http://www.zend.com">http://www.zend.com</a>.
+                    </p>
+                </div>
+                <div class="phalcon-blog-detail">
+                    <h2 itemprop="name headline" class="headline">
+                        Zend License
+                    </h2>
+                    <p>
+                        The Zend Engine License, Version 2.00<br>
+                        Copyright (c) 1999-2006 Zend Technologies Ltd. All rights reserved.
+                    </p>
+                    <p>
+                        Redistribution and use in source and binary forms, with or without
+                        modification, is permitted provided that the following conditions
+                        are met:
+                    </p>
+                    <ol>
+                        <li>
+                          Redistributions of source code must retain the above copyright
+                             notice, this list of conditions and the following disclaimer.
+                        </li>
+                        <li>
+                          Redistributions in binary form must reproduce the above
+                             copyright notice, this list of conditions and the following
+                             disclaimer in the documentation and/or other materials provided
+                             with the distribution.
+                        </li>
+                        <li>
+                          The names "Zend" and "Zend Engine" must not be used to endorse
+                             or promote products derived from this software without prior
+                             permission from Zend Technologies Ltd. For written permission,
+                             please contact license@zend.com.
+                        </li>
+                        <li>
+                          Zend Technologies Ltd. may publish revised and/or new versions
+                             of the license from time to time. Each version will be given a
+                             distinguishing version number.
+                             Once covered code has been published under a particular version
+                             of the license, you may always continue to use it under the
+                             terms of that version. You may also choose to use such covered
+                             code under the terms of any subsequent version of the license
+                             published by Zend Technologies Ltd. No one other than Zend
+                             Technologies Ltd. has the right to modify the terms applicable
+                             to covered code created under this License.
+                        </li>
+                        <li>
+                          Redistributions of any form whatsoever must retain the following
+                             acknowledgment:
+                             "This product includes the Zend Engine, freely available at
+                             http://www.zend.com"
+                        </li>
+                        <li>
+                          All advertising materials mentioning features or use of this
+                             software must display the following acknowledgment:
+                             "The Zend Engine is freely available at http://www.zend.com"
+                        </li>
+                    </ol>
+                    <p>
+                        THIS SOFTWARE IS PROVIDED BY ZEND TECHNOLOGIES LTD. ``AS IS'' AND
+                        ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+                        THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+                        PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL ZEND
+                        TECHNOLOGIES LTD.  BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+                        SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+                        LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+                        USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+                        ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+                        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+                        OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+                        SUCH DAMAGE.
+                    </p>
+                </div>
+
+            </div>
+        <div class="phalcon-blog__right">
+          <div class="phalcon-blog__right-item phalcon-blog__sponsors">
+            <div class="phalcon-blog__title">
+              Sponsors
+            </div>
+            <div class="phalcon-blog__sponsors-items">
+              <a href="#" class="phalcon-blog__sponsors-item">
+                <img src="./img/support1.svg" alt="">
+              </a>
+                <a href="#" class="phalcon-blog__sponsors-item">
+                  <img src="./img/support2.svg" alt="">
+                </a>
+              <a href="#" class="phalcon-blog__sponsors-item">
+                <img src="./img/support3.svg" alt="">
+              </a>
+
+                <a href="#" class="phalcon-blog__sponsors-item">
+                  <svg width="38" height="31" viewBox="0 0 38 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.375 29.3529C22.9283 29.3529 29.0514 23.2298 29.0514 15.6765C29.0514 8.12317 22.9283 2 15.375 2C7.82165 2 1.69849 8.12317 1.69849 15.6765C1.69849 23.2298 7.82165 29.3529 15.375 29.3529Z" stroke="#273646" stroke-opacity="0.7" stroke-width="3"/>
+                    <path d="M33.9044 23.6177H32.1397V30.6765H33.9044V23.6177Z" fill="#273646" fill-opacity="0.7"/>
+                    <path d="M37.4338 23.6177H35.6691V30.6765H37.4338V23.6177Z" fill="#273646" fill-opacity="0.7"/>
+                  </svg>
+                </a>
+
+              <a href="#" class="phalcon-blog__sponsors-item">
+                <span>Support Us</span>
+              </a>
+            </div>
+          </div>
+          <div class="phalcon-blog__right-item phalcon-blog__tags">
+            <div class="phalcon-blog__title">
+              Tags
+            </div>
+            <div class="phalcon-blog__tags-items">
+              <a href="#" class="phalcon-blog__tags-item">
+                <span>Phalcon</span><span>(123)</span>
+              </a>
+              <a href="#" class="phalcon-blog__tags-item">
+                <span>Php</span><span>(23)</span>
+              </a>
+              <a href="#" class="phalcon-blog__tags-item">
+                <span>Release</span><span>(12)</span>
+              </a>
+              <a href="#" class="phalcon-blog__tags-item">
+                <span>Frameworks</span><span>(13)</span>
+              </a>
+              <a href="#" class="phalcon-blog__tags-item">
+                <span>Phalcon</span><span>(323)</span>
+              </a>
+              <a href="#" class="phalcon-blog__tags-item">
+                <span>Php</span><span>(14)</span>
+              </a>
+              <a href="#" class="phalcon-blog__tags-item">
+                <span>Release</span><span>(1)</span>
+              </a>
+              <a href="#" class="phalcon-blog__tags-item">
+                <span>Frameworks</span><span>(0)</span>
+              </a>
+            </div>
+            <a href="#" class="phalcon-blog__item-read-more">Show More</a>
+          </div>
+            <div class="phalcon-blog__right-item phalcon-blog__projects">
+              <div class="phalcon-blog__title">
+                Projects
+              </div>
+              <div class="phalcon-blog__projects-text">
+                    We're a nonprofit organization that creates
+                    solutions for web developers. Our products are
+                    <a href="https://phalconphp.com">Phalcon</a>,
+                    <a href="https://zephir-lang.com">Zephir</a> and
+                    <a href="https://github.com/phalcon?type=source">others</a>.
+                    If you would like to help us stay free and open,
+                    please consider <a href="https://phalcon.link/fund">supporting us</a>.
+                </div>
+            </div>
+          <div class="phalcon-blog__right-item phalcon-blog__jobs">
+            <div class="phalcon-blog__title">
+              Phalcon Jobs
+            </div>
+            <div class="phalcon-blog__jobs-items">
+              <a href="#" class="phalcon-blog__jobs-item">
+                <div class="phalcon-blog__jobs-item-name">Senior Backend Engineer (PHP/Phalcon)</div>
+                <div class="phalcon-blog__jobs-item-info">
+                  <div class="phalcon-blog__jobs-item-company">At Mr. Mokky</div>
+                  <div class="phalcon-blog__jobs-item-address">Barcelona, Spain</div>
+                </div>
+              </a>
+              <a href="#" class="phalcon-blog__jobs-item">
+                <div class="phalcon-blog__jobs-item-name">Senior Backend Engineer (PHP/Phalcon)</div>
+                <div class="phalcon-blog__jobs-item-info">
+                  <div class="phalcon-blog__jobs-item-company">At Mr. Mokky</div>
+                  <div class="phalcon-blog__jobs-item-address">Barcelona, Spain</div>
+                </div>
+              </a>
+              <a href="#" class="phalcon-blog__jobs-item">
+                <div class="phalcon-blog__jobs-item-name">Senior Backend Engineer (PHP/Phalcon)</div>
+                <div class="phalcon-blog__jobs-item-info">
+                  <div class="phalcon-blog__jobs-item-company">At Mr. Mokky</div>
+                  <div class="phalcon-blog__jobs-item-address">Barcelona, Spain</div>
+                </div>
+              </a>
+            </div>
+            <a href="#" class="phalcon-blog__item-read-more">Show more Jobs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+	<footer class="footer">
+	<div class="container">
+		<nav>
+			<ul class="footer-nav">
+				<li>
+					<a href="#">Documentation</a>
+				</li>
+				<li>
+					<a href="#">Ecosystem</a>
+				</li>
+				<li>
+					<a href="#">Sponsors</a>
+				</li>
+				<li>
+					<a href="#">Sponsors</a>
+				</li>
+				<li>
+					<a href="#">Blog</a>
+				</li>
+				<li>
+					<a href="#">Team</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="footer__license">
+			Phalcon is an open-source PHP framework  built as a C-extension.
+			<br>
+			It is available under the  new BSD License.
+		</div>
+
+		<div class="footer__supported">
+			<span>Supported By</span>
+
+			<a href="#" class="footer__supported-logo">
+				<svg width="38" height="31" viewBox="0 0 38 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15.375 29.3529C22.9283 29.3529 29.0514 23.2298 29.0514 15.6765C29.0514 8.12317 22.9283 2 15.375 2C7.82165 2 1.69849 8.12317 1.69849 15.6765C1.69849 23.2298 7.82165 29.3529 15.375 29.3529Z" stroke="#273646" stroke-opacity="0.7" stroke-width="3"/>
+					<path d="M33.9044 23.6177H32.1397V30.6765H33.9044V23.6177Z" fill="#273646" fill-opacity="0.7"/>
+					<path d="M37.4338 23.6177H35.6691V30.6765H37.4338V23.6177Z" fill="#273646" fill-opacity="0.7"/>
+				</svg>
+			</a>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
+

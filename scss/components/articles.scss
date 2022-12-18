@@ -1,0 +1,381 @@
+.phalcon-blog
+{
+	padding: 50px 0;
+	@include TitilliumWeb();
+}
+.phalcon-blog .container
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.phalcon-blog__main
+{
+	flex: 1;
+}
+.phalcon-blog__right
+{
+	width: 350px;
+	top: 10px;
+	margin-left: 20px;
+}
+.phalcon-blog__item
+{
+	display: flex;
+	margin-bottom: 35px;
+}
+.phalcon-blog__item-content
+{
+	width: 100%;
+}
+.phalcon-blog__item-img
+{
+	display: block;
+	width: 180px;
+	height: 180px;
+	flex-shrink: 0;
+	margin-left: 20px;
+	text-align: center;
+	position: relative;
+	img
+	{
+		width: 100%;
+		height: 100%;
+		max-width: 350px;
+		object-fit: cover;
+	}
+	&:after
+	{
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: rgba(229, 229, 229, 0.5);
+	}
+}
+.phalcon-blog__item-title
+{
+	@include TitilliumWeb(700);
+	display: block;
+	font-size: 25px;
+	margin-bottom: 5px;
+	a
+	{
+		color: $main;
+	}
+}
+.phalcon-blog__item-info
+{
+	display: flex;
+	color: $gray;
+	margin-bottom: 5px;
+	font-size: 12px;
+	line-height: 17px;
+}
+.phalcon-blog__item-date
+{
+	margin-right: 22px;
+	position: relative;
+	&:after
+	{
+		position: absolute;
+		content: '';
+		width: 2px;
+		height: 2px;
+		background-color: $gray;
+		border-radius: 50%;
+		right: -12px;
+		top: 7px;
+	}
+}
+.phalcon-blog__item-article
+{
+	font-size: 14px;
+	color: $gray;
+	margin-bottom: 11px;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	line-height: 20px;
+	p
+	{
+		margin: 0;
+		line-height: 20px;
+	}
+	a
+	{
+		color: $linkColor;
+		line-height: 23px;
+		font-size: 16px;
+		border-bottom: 1px solid $linkColor;
+		transition: all .125s;
+		&:hover
+		{
+			border-bottom-color: transparent;
+		}
+	}
+}
+.phalcon-blog__item-read-more
+{
+	font-size: 14px;
+	color: $linkColor;
+	border-bottom: 1px solid $linkColor;
+	transition: all .125s;
+	&:hover
+	{
+		border-bottom-color: transparent;
+	}
+}
+.phalcon-blog__main-title
+{
+	text-transform: uppercase;
+	@include TitilliumWeb(100);
+	margin-bottom: 30px;
+}
+.phalcon-blog__last-article
+{
+	.phalcon-blog__item
+	{
+		flex-direction: row-reverse;
+		flex-wrap: wrap;
+		margin-bottom: 30px;
+	}
+	.phalcon-blog__item-img
+	{
+		width: 100%;
+		order: -1;
+		margin-bottom: 10px;
+		&:after
+		{
+			display: none;
+		}
+	}
+}
+.phalcon-blog__right-item
+{
+	margin-bottom: 35px;
+}
+
+.phalcon-blog__sponsors-items
+{
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -15px;
+}
+.phalcon-blog__title
+{
+	margin-bottom: 15px;
+	font-size: 18px;
+	height: 20px;
+}
+.phalcon-blog__sponsors-item
+{
+	flex-basis: calc(50% - 15px);
+	max-width: calc(50% - 15px);
+	display: block;
+	height: 60px;
+	padding: 13px 14px;
+	margin-bottom: 15px;
+	border: 1px solid rgba(39, 54, 70, 0.4);
+	border-radius: 4px;
+	margin-right: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .2s;
+	span
+	{
+		color: $linkColor;
+		border-bottom: 1px solid $linkColor;
+		font-size: 20px;
+		line-height: 23px;
+		transition: all .125s;
+		&:hover
+		{
+			border-bottom-color: transparent;
+		}
+	}
+	img
+	{
+		object-fit: contain;
+		width: 100%;
+		height: 100%;
+		transform: scale(1);
+	}
+	&:hover
+	{
+		border-color: #273646;
+	}
+}
+.phalcon-blog__tags-items
+{
+	display: flex;
+	flex-wrap: wrap;
+}
+.phalcon-blog__tags-item
+{
+	padding: 5px 12px;
+	font-size: 10px;
+	color: $gray;
+	border: 1px solid rgba(39, 54, 70, 0.1);
+	margin-right: 13px;
+	margin-bottom: 13px;
+	border-radius: 3px;
+	transition: all .125s;
+
+	span:first-child
+	{
+		font-size: 14px;
+		color: $main;
+		margin-right: 3px;
+		transition: all .125s;
+		text-transform: capitalize;
+	}
+	span:last-child
+	{
+		font-weight: 700;
+	}
+	&:hover
+	{
+		background-color: $main;
+		color: #fff;
+		span
+		{
+			color: #fff;
+		}
+	}
+}
+.phalcon-blog__jobs-item
+{
+	border: 1px solid rgba(39, 54, 70, 0.4);
+	border-radius: 4px;
+	padding: 8px 14px;
+	display: block;
+	transition: all .125s;
+	margin-bottom: 5px;
+	&:hover
+	{
+		border-color: #273646;
+		.phalcon-blog__jobs-item-name
+		{
+			color: #273646;
+		}
+		.phalcon-blog__jobs-item-info
+		{
+			color: rgba(39, 54, 70, 0.7);
+		}
+	}
+}
+.phalcon-blog__jobs-item-name
+{
+	color: rgba(39, 54, 70, 0.7);
+	line-height: 22px;
+	font-size: 16px;
+	transition: all .125s;
+}
+.phalcon-blog__jobs-item-info
+{
+	line-height: 17px;
+	font-size: 12px;
+	color: rgba(39, 54, 70, 0.4);
+	display: flex;
+	flex-wrap: wrap;
+	transition: all .125s;
+}
+.phalcon-blog__jobs-items
+{
+	margin-bottom: 15px;
+}
+.phalcon-blog__jobs-item-company
+{
+	position: relative;
+	margin-right: 14px;
+	margin-bottom: 5px;
+	&:after
+	{
+		position: absolute;
+		content: '';
+		width: 2px;
+		height: 2px;
+		background-color: rgba(39, 54, 70, 0.4);
+		border-radius: 50%;
+		right: -8px;
+		top: 9px;
+	}
+}
+@media (max-width: 1439px)
+{
+	.phalcon-blog__right
+	{
+		width: 280px;
+		margin-left: 20px;
+	}
+	.phalcon-blog__sponsors-items
+	{
+		margin-right: -10px;
+	}
+	.phalcon-blog__sponsors-item
+	{
+		margin-right: 10px;
+		margin-bottom: 10px;
+		flex-basis: calc(50% - 10px);
+		max-width: calc(50% - 10px);
+	}
+}
+.phalcon-blog__projects-text
+{
+	color: $gray;
+	font-size: 16px;
+	line-height: 23px;
+	a
+	{
+		color: $linkColor;
+		line-height: 23px;
+		font-size: 16px;
+		border-bottom: 1px solid $linkColor;
+		transition: all .125s;
+		&:hover
+		{
+			border-bottom-color: transparent;
+		}
+	}
+}
+@media (max-width: 1023px)
+{
+	.phalcon-blog .container
+	{
+		flex-wrap: wrap;
+	}
+	.phalcon-blog__main
+	{
+		width: 100%;
+	}
+	.phalcon-blog__right
+	{
+		width: 100%;
+		margin-left: 0;
+	}
+	.phalcon-blog__item
+	{
+		flex-wrap: wrap;
+	}
+	.phalcon-blog__item-img
+	{
+		width: 100%;
+		margin-bottom: 10px;
+		margin-left: 0;
+		order: -1;
+	}
+}
+
+@media (max-width: 767px)
+{
+	.phalcon-blog__item-article
+	{
+		-webkit-line-clamp: 6;
+	}
+}

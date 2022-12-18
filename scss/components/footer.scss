@@ -1,0 +1,71 @@
+.footer
+{
+	background: rgba(229, 229, 229, 0.4);
+	padding-top: 20px;
+	padding-bottom: 27px;
+	@include TitilliumWeb();
+	font-size: 16px;
+}
+
+.footer-nav
+{
+	margin: 0 auto;
+	max-width: 100%;
+	color: #000;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-bottom: 20px;
+
+	li
+	{
+		margin: 0 15px;
+		transition: .135s;
+		border-bottom: 1px solid transparent;
+
+		a
+		{
+			color: #000;
+		}
+
+		&:hover
+		{
+			transition: .135s;
+			border-bottom: 1px solid #000;
+		}
+	}
+}
+
+.footer__license
+{
+	text-align: center;
+	line-height: 23px;
+	color: rgba(39, 54, 70, 0.7);
+	margin-bottom: 17px;
+}
+
+.footer__supported
+{
+	color: rgba(39, 54, 70, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	span
+	{
+		margin-right: 13px;
+	}
+}
+
+@media (max-width: 767px)
+{
+	.footer-nav
+	{
+		flex-wrap: wrap;
+
+		li
+		{
+			line-height: 23px;
+		}
+	}
+}

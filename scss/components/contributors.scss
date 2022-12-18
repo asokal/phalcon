@@ -1,0 +1,166 @@
+.contributors
+{
+	@include TitilliumWeb();
+	color: #273642;
+	margin-bottom: 30px;
+}
+
+.contributors__top
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 44px;
+}
+
+.contibutors__title
+{
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 24px;
+	margin-top: 0;
+	margin-bottom: 9px;
+}
+
+.contibutors__descr
+{
+	font-size: 15px;
+	line-height: 18px;
+}
+
+.contributors__list-wrap
+{
+	margin: 0 -10px;
+}
+
+.contributors__list
+{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.contributors__list-item
+{
+	flex-shrink: 0;
+	flex-basis: calc((100% / 12) - 20px);
+	max-width: calc((100% / 12) - 20px);
+	height: 58px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 10px 18px;
+	transition: .2s;
+
+	&:hover
+	{
+		transform: scale(1.2);
+	}
+
+	img
+	{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.contributors__mobile
+{
+	display: none;
+}
+
+@media (max-width: 1023px)
+{
+	.contributors__top
+	{
+		margin-bottom: 39px;
+	}
+
+	.contibutors__title
+	{
+		font-size: 17px;
+		line-height: 19px;
+		margin-bottom: 5px;
+	}
+
+	.contibutors__descr
+	{
+		font-size: 12px;
+		line-height: 14px;
+	}
+
+	.contributors__list-wrap
+	{
+		margin: 0;
+		padding: 0 19px;
+	}
+
+	.contributors__list-item
+	{
+		flex-basis: calc((100% / 9) - 16px);
+		max-width: calc((100% / 9) - 16px);
+		height: 60px;
+		margin: 0 8px 18px;
+	}
+}
+
+@media (max-width: 767px)
+{
+	.contibutors__title, .green-button-light
+	{
+		display: none;
+	}
+
+	.contributors__top
+	{
+		margin-bottom: 7px;
+	}
+
+	.contibutors__descr
+	{
+		text-align: center;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 21px;
+	}
+
+	.contributors__list-wrap
+	{
+		padding: 0;
+	}
+
+	.contributors__list
+	{
+		max-height: 285px;
+		overflow: hidden;
+		padding: 15px 0;
+		margin-bottom: 15px;
+		justify-content: center;
+	}
+
+	.contributors__list-item
+	{
+		flex-basis: calc((100% / 5) - 16px);
+		max-width: calc((100% / 5) - 16px);
+		height: 51px;
+		margin: 0 5px 18px;
+	}
+
+	.contributors__mobile
+	{
+		display: block;
+
+		.black-button
+		{
+			width: 247px;
+			margin: 0 auto;
+			height: 56px;
+			line-height: 56px;
+			font-size: 15px;
+
+			&:not(:last-child)
+			{
+				margin-bottom: 10px;
+			}
+		}
+	}
+}

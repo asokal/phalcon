@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	@@include('./components/pagehead.html')
+</head>
+<body>
+	@@include('./components/header.html')
+	<main class="wrapper">
+		<h1 class="hidden-accessible">
+			Add Phalcon Project
+		</h1>
+		<div class="add-project">
+			<div class="container">
+				<nav class="breadcrumbs">
+					<a href="#" class="breadcrumbs__path">Projects</a>
+					<span class="breadcrumbs__curr-page">Add project</span>
+				</nav>
+
+				<form class="project-form" id="project-form">
+					<div class="project-data">
+						<label for="project-author" class="project-data__title">AUTHOR</label>
+						<div class="project-data__value">
+							<div class="input-wrap error">
+								<input type="text" class="input" placeholder="Enter author name" id="project-author">
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">Incorrect author name</span>
+						</div>
+					</div>
+					<div class="project-data">
+						<label for="project-author-email" class="project-data__title">E-mail</label>
+						<div class="project-data__value">
+							<div class="input-wrap">
+								<input type="text" class="input" placeholder="Enter author email" id="project-author-email">
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">Incorrect author email</span>
+						</div>
+					</div>
+					<div class="project-data">
+						<label for="project-name" class="project-data__title">Title</label>
+						<div class="project-data__value">
+							<div class="input-wrap">
+								<input type="text" class="input" placeholder="Enter project title" id="project-name">
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">Incorrect project title</span>
+						</div>
+					</div>
+					<div class="project-data">
+						<label for="project-url" class="project-data__title">URL</label>
+						<div class="project-data__value">
+							<div class="input-wrap">
+								<input type="text" class="input" placeholder="Enter project link" id="project-url">
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">Incorrect project link</span>
+						</div>
+					</div>
+					<div class="project-data">
+						<label for="project-tags" class="project-data__title">Tags</label>
+						<div class="project-data__value">
+							<div class="input-wrap">
+								<div class="input-wrap__search-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none">
+										<path fill="#273646" fill-opacity=".4" d="M13.79 12.26l-3.2-3.33A5.42 5.42 0 0 0 6.41 0a5.44 5.44 0 1 0 3.12 9.89l3.22 3.36a.7.7 0 0 0 1 .02c.29-.27.3-.72.03-1zM6.42 1.42a4.02 4.02 0 1 1 0 8.04 4.02 4.02 0 0 1 0-8.04z"/>
+									</svg>
+								</div>
+								<input type="text" class="input input--search" placeholder="Enter tag name" id="project-tags">
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">error message</span>
+							<div class="tags">
+								<div class="tag">
+									<span class="tag__text">
+										Phalconv4
+									</span>
+									<div class="tag__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none">
+											<g clip-path="url(#clip0)">
+												<path fill="#385B56" fill-opacity=".4" d="M4.12 3.5L6.87.75a.44.44 0 1 0-.62-.62L3.5 2.88.75.13a.44.44 0 1 0-.62.62L2.88 3.5.13 6.25a.44.44 0 1 0 .62.62L3.5 4.12l2.75 2.75a.44.44 0 0 0 .62 0 .44.44 0 0 0 0-.62L4.12 3.5z"/>
+											</g>
+											<defs>
+												<clipPath id="clip0">
+													<path fill="#fff" d="M0 0h7v7H0z"/>
+												</clipPath>
+											</defs>
+										</svg>
+									</div>
+								</div>
+								<div class="tag">
+									<span class="tag__text">
+										ACL
+									</span>
+									<div class="tag__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none">
+											<g clip-path="url(#clip0)">
+												<path fill="#385B56" fill-opacity=".4" d="M4.12 3.5L6.87.75a.44.44 0 1 0-.62-.62L3.5 2.88.75.13a.44.44 0 1 0-.62.62L2.88 3.5.13 6.25a.44.44 0 1 0 .62.62L3.5 4.12l2.75 2.75a.44.44 0 0 0 .62 0 .44.44 0 0 0 0-.62L4.12 3.5z"/>
+											</g>
+											<defs>
+												<clipPath id="clip0">
+													<path fill="#fff" d="M0 0h7v7H0z"/>
+												</clipPath>
+											</defs>
+										</svg>
+									</div>
+								</div>
+								<div class="tag">
+									<span class="tag__text">
+										AWS
+									</span>
+									<div class="tag__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none">
+											<g clip-path="url(#clip0)">
+												<path fill="#385B56" fill-opacity=".4" d="M4.12 3.5L6.87.75a.44.44 0 1 0-.62-.62L3.5 2.88.75.13a.44.44 0 1 0-.62.62L2.88 3.5.13 6.25a.44.44 0 1 0 .62.62L3.5 4.12l2.75 2.75a.44.44 0 0 0 .62 0 .44.44 0 0 0 0-.62L4.12 3.5z"/>
+											</g>
+											<defs>
+												<clipPath id="clip0">
+													<path fill="#fff" d="M0 0h7v7H0z"/>
+												</clipPath>
+											</defs>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="project-data project-data--big">
+						<label for="project-preview" class="project-data__title">Preview image</label>
+						<div class="project-data__value">
+							<div class="upload _uploadPreview">
+								<label class="upload-item" for="project-preview">
+									<div class="upload__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none">
+											<path fill="#273646" fill-opacity=".4" d="M63.43 30.49A22.4 22.4 0 0 0 41.06 8.42 22.31 22.31 0 0 0 19.17 26.2h-.21A18.98 18.98 0 0 0 0 45.15c0 10.46 8.5 18.96 18.96 18.96H32.2a1.7 1.7 0 0 0 0-3.4H18.96A15.56 15.56 0 0 1 3.4 45.14a15.56 15.56 0 0 1 17.03-15.47 1.7 1.7 0 0 0 1.85-1.47 18.98 18.98 0 0 1 18.77-16.38c10.45 0 18.96 8.5 18.96 18.97 0 .37-.03.76-.06 1.17v.18a1.7 1.7 0 0 0 1.86 1.81A13.42 13.42 0 0 1 76.58 47.3c0 7.4-6 13.41-13.4 13.41H49.27a1.7 1.7 0 0 0 0 3.41H63.2C72.45 64.11 80 56.57 80 47.3c0-9.19-7.4-16.68-16.57-16.81z"/>
+											<path fill="#273646" fill-opacity=".4" d="M41.06 16.44a14.4 14.4 0 0 0-14.21 12.4 1.7 1.7 0 0 0 3.38.46 10.97 10.97 0 0 1 10.83-9.45 1.7 1.7 0 1 0 0-3.41zM48.81 50l-6.2-5.54a2.82 2.82 0 0 0-3.76 0l-6.2 5.55a1.7 1.7 0 0 0 2.27 2.54l4.1-3.66v20.99a1.7 1.7 0 1 0 3.42 0v-21l4.1 3.67a1.7 1.7 0 0 0 2.41-.13 1.7 1.7 0 0 0-.14-2.41z"/>
+										</svg>
+									</div>
+									<div class="upload__button">Upload Image</div>
+									<input type="file" name="sreens" class="upload__input _uploadPreviewInput" id="project-preview" multiple />
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="project-data project-data--big">
+						<label for="project-screenshots" class="project-data__title">Screenshots</label>
+						<div class="project-data__value">
+							<div class="upload _uploadScreens">
+								<label class="upload-item" for="project-screenshots">
+									<div class="upload__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none">
+											<path fill="#273646" fill-opacity=".4" d="M63.43 30.49A22.4 22.4 0 0 0 41.06 8.42 22.31 22.31 0 0 0 19.17 26.2h-.21A18.98 18.98 0 0 0 0 45.15c0 10.46 8.5 18.96 18.96 18.96H32.2a1.7 1.7 0 0 0 0-3.4H18.96A15.56 15.56 0 0 1 3.4 45.14a15.56 15.56 0 0 1 17.03-15.47 1.7 1.7 0 0 0 1.85-1.47 18.98 18.98 0 0 1 18.77-16.38c10.45 0 18.96 8.5 18.96 18.97 0 .37-.03.76-.06 1.17v.18a1.7 1.7 0 0 0 1.86 1.81A13.42 13.42 0 0 1 76.58 47.3c0 7.4-6 13.41-13.4 13.41H49.27a1.7 1.7 0 0 0 0 3.41H63.2C72.45 64.11 80 56.57 80 47.3c0-9.19-7.4-16.68-16.57-16.81z"/>
+											<path fill="#273646" fill-opacity=".4" d="M41.06 16.44a14.4 14.4 0 0 0-14.21 12.4 1.7 1.7 0 0 0 3.38.46 10.97 10.97 0 0 1 10.83-9.45 1.7 1.7 0 1 0 0-3.41zM48.81 50l-6.2-5.54a2.82 2.82 0 0 0-3.76 0l-6.2 5.55a1.7 1.7 0 0 0 2.27 2.54l4.1-3.66v20.99a1.7 1.7 0 1 0 3.42 0v-21l4.1 3.67a1.7 1.7 0 0 0 2.41-.13 1.7 1.7 0 0 0-.14-2.41z"/>
+										</svg>
+									</div>
+									<div class="upload__button">Upload Image</div>
+									<input type="file" name="sreens" class="upload__input _uploadScreenshotsInput" id="project-screenshots" multiple />
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="project-data project-data--big">
+						<label for="project-descr" class="project-data__title">Description</label>
+						<div class="project-data__value">
+							<div class="input-wrap">
+								<textarea placeholder="Enter the Description" class="input" id="project-descr"></textarea>
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">Incorrect project link</span>
+						</div>
+					</div>
+					<button class="form-button">Add Project</button>
+				</form>
+			</div>
+		</div>
+	</main>
+	@@include('./components/footer.html')
+</body>
+</html>
+

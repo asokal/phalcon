@@ -1,0 +1,151 @@
+.form-button
+{
+	display: block;
+	font-size: 16px;
+	color: #273646;
+	height: 38px;
+	padding: 0 24px;
+	line-height: 38px;
+	border: 1px solid rgba(39, 54, 70, 0.1);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.06);
+	border-radius: 4px;
+	transition: all .135s;
+
+	&:hover
+	{
+		border: 1px solid rgba(39, 54, 70, 0.3);
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.green-button
+{
+	display: block;
+	width: 161px;
+	border-radius: 3px;
+	background-color: #8FC19A;
+	color: #fff;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	border: 0;
+	box-shadow: none;
+	transition: .2s;
+
+	&:hover
+	{
+		background-color: rgba(143, 193, 154, 0.7);
+	}
+}
+
+.green-button-light
+{
+	display: block;
+	padding: 0 39px;
+	border-radius: 3px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 15px;
+	text-align: center;
+	@include TitilliumWeb(500);
+	color: #8FC19A;
+	border: 0;
+	box-shadow: none;
+	background-color: rgba(143, 193, 154, 0.1);
+	transition: .2s;
+
+	&:hover
+	{
+		color: #fff;
+		background-color: rgba(143, 193, 154, 0.9);
+	}
+}
+
+.black-button
+{
+	display: block;
+	padding: 0 35px;
+	border-radius: 3px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 15px;
+	text-align: center;
+	@include TitilliumWeb();
+	color: #fff;
+	border: 0;
+	box-shadow: none;
+	background-color: $main;
+	transition: .2s;
+
+	&:hover
+	{
+		background-color: #000;
+	}
+}
+
+.switch
+{
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 17px;
+}
+
+.switch__slider
+{
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	transition: .4s;
+	border-radius: 17px;
+
+	&:before
+	{
+		position: absolute;
+		content: "";
+		height: 13px;
+		width: 13px;
+		left: 2px;
+		bottom: 2px;
+		background-color: #fff;
+		transition: .4s;
+		border-radius: 50%;
+	}
+}
+
+.switch__checkbox
+{
+	opacity: 0;
+	width: 0;
+	height: 0;
+
+	&:checked + .switch__slider
+	{
+		background-color: #8FC19A;
+
+		&:before
+		{
+			transform: translateX(13px);
+		}
+	}
+
+	&:focus + .switch__slider
+	{
+		box-shadow: 0 0 1px #8FC19A;
+	}
+}
+
+@media (max-width: 767px)
+{
+	.black-button
+	{
+		height: 30px;
+		line-height: 30px;
+		padding: 0 19px;
+		font-size: 12px;
+	}
+}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro|Titillium+Web&display=swap');
+
+@mixin SourceCodePro($weight:"normal", $style:"normal")
+{
+	font-family: 'Source Code Pro';
+	font-weight: #{$weight};
+	font-style: #{$style};
+}
+
+@mixin TitilliumWeb($weight:"normal", $style:"normal")
+{
+	font-family: 'Titillium Web';
+	font-weight: #{$weight};
+	font-style: #{$style};
+}
