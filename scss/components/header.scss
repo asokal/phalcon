@@ -1,0 +1,600 @@
+.header
+{
+	height: 80px;
+	background-color: #273646;
+	padding: 20px 0;
+	color: #fff;
+	@include TitilliumWeb();
+	font-size: 15px;
+	position: relative;
+	z-index: 1;
+
+	.container
+	{
+		display: flex;
+		align-items: center;
+	}
+
+	a
+	{
+		color: #fff;
+		transition: .135s;
+
+		&:hover
+		{
+			color: #8FC19A;
+		}
+	}
+}
+
+.header__left
+{
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.header__logo
+{
+	margin-right: 35px;
+	display: flex;
+	align-items: center;
+
+	a
+	{
+		display: block;
+		width: 105px;
+		height: 43px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-image: url("https://assets.phalconphp.com/phalcon/images/svg/phalcon-logo-white-105x40.svg");
+	}
+}
+
+.header__sitename
+{
+	height: 18px;
+	margin-left: 10px;
+	padding: 0 12px;
+	border-radius: 100px;
+	background-color: #8FC19A;
+	background-color: rgba(143, 193, 154, 0.7);
+	font-size: 9px;
+	line-height: 18px;
+}
+
+.header-nav
+{
+	display: flex;
+	align-items: center;
+	margin-right: 35px;
+
+	& > li
+	{
+		margin-right: 30px;
+
+		&:last-child
+		{
+			margin-right: 0;
+		}
+
+		a
+		{
+			color: #fff;
+			transition: .135s;
+		}
+
+		&.active > a, &:hover > a
+		{
+			transition: .135s;
+			color: #8FC19A;
+		}
+
+		&.expand
+		{
+			position: relative;
+			&:hover
+			{
+				.header-dropdown-wrapper
+				{
+					display: block;
+				}
+			}
+
+			& > a::after
+			{
+				content: url("https://assets.phalconphp.com/phalcon/images/svg/arrow.svg");
+				color: #fff;
+				position: relative;
+				top: -1px;
+				margin-left: 5px;
+			}
+		}
+	}
+
+	&--mobile
+	{
+		width: 230px;
+		height: 100%;
+		padding: 20px;
+		position: fixed;
+		top: 0;
+		left: -250px;
+		z-index: 20;
+		background-color: #273646;
+		overflow-y: scroll;
+		transition: .4s;
+
+		&::-webkit-scrollbar
+		{
+			width: 6px;
+		}
+
+		&::-webkit-scrollbar-thumb
+		{
+			background: rgba(229, 229, 229, 0.7);
+		}
+
+		&.active
+		{
+			left: 0;
+			transition: .4s;
+		}
+
+		.header__search
+		{
+			display: block;
+			width: 184px;
+			margin-right: 0;
+			margin-bottom: 15px;
+		}
+
+		& > ul
+		{
+			& > li
+			{
+				margin-bottom: 15px;
+
+				&:last-child
+				{
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		li.extendable
+		{
+			.header-dropdown--mobile
+			{
+				margin-top: 15px;
+
+				&__title
+				{
+					font-size: 14px;
+				}
+
+				ul
+				{
+					padding-left: 9px;
+					font-size: 13px;
+				}
+			}
+
+			& > a
+				{
+					display: flex;
+					align-items: center;
+
+					&:after {
+						content: url(https://assets.phalconphp.com/phalcon/images/svg/arrow.svg);
+						color: #fff;
+						position: relative;
+						top: -1px;
+						margin-left: 5px;
+				}
+			}
+		}
+
+		li.extended
+		{
+			.header-dropdown--mobile
+			{
+				display: block;
+			}
+
+			.header-dropdown--mobile-lang a
+			{
+				display: flex;
+				align-items: center;
+			}
+		}
+	}
+}
+
+.header-dropdown
+{
+	z-index: 10;
+	background-color: #fff;
+	border: 1px solid rgba(229, 229, 229, 0.7);
+	border-radius: 4px;
+	padding: 15px;
+
+	li
+	{
+		margin-bottom: 7px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&:last-child
+		{
+			margin-bottom: 0;
+		}
+
+		&.active > a
+		{
+			transition: .135s;
+			color: #8FC19A;
+		}
+
+		// &.active .header-dropdown__count, &:hover .header-dropdown__count
+		// {
+		// 	transition: .135s;
+		// 	color: #8FC19A;
+		// 	background: rgba(39, 54, 70, 0.1);
+		// }
+	}
+
+	&__title
+	{
+		@include TitilliumWeb(bold);
+		color: #273646;
+		padding-top: 10px;
+		border-top: 1px solid rgba(229, 229, 229, 0.7);
+
+		&:first-child
+		{
+			border-top: 0;
+			padding-top: 0;
+		}
+	}
+
+	li a
+	{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: rgba(39, 54, 70, 0.7);
+		font-size: 13px;
+		transition: .135s;
+	}
+
+	&-wrapper
+	{
+		display: none;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		padding-top: 11px
+	}
+
+	&--eco
+	{
+		min-width: 160px;
+
+		& > li
+		{
+			margin-bottom: 10px;
+		}
+
+		li a
+		{
+			display: inline;
+		}
+	}
+
+	&--lang
+	{
+		min-width: 180px;
+		max-height: 403px;
+		overflow-y: auto;
+
+		li a
+		{
+			align-items: center;
+			flex-shrink: 0;
+		}
+	}
+
+	&--cat
+	{
+		min-width: 285px;
+	}
+
+	&__count
+	{
+		@include TitilliumWeb(bold);
+		font-size: 9px;
+		color: #fff;
+		background: rgba(39, 54, 70, 0.4);
+		border-radius: 10px;
+		padding: 0 7px;
+		height: 17px;
+		line-height: 17px;
+		align-self: center;
+		margin-bottom: 1px;
+		transition: .135s;
+	}
+
+	&--mobile
+	{
+		display: none;
+		padding-left: 8px;
+
+		li
+		{
+			margin-bottom: 13px;
+		}
+	}
+}
+
+.header__search
+{
+	width: 172px;
+	height: 30px;
+	padding: 0px 15px;
+	margin-right: 20px;
+	background-color: rgba(229, 229, 229, 0.4);
+	border-radius: 100px;
+	font-size: 12px;
+	border: 0;
+	box-sizing: border-box;
+	transition: .2s;
+
+	&::placeholder
+	{
+		color: #fff;
+	}
+
+	&:focus
+	{
+		box-shadow: none;
+		border: none;
+		box-sizing: border-box;
+		background-color: #fff;
+		color: rgba(39, 54, 70, 0.7);
+		transition: .2s;
+
+		&::placeholder
+		{
+			color: rgba(39, 54, 70, 0.7);
+		}
+	}
+}
+
+.header__right
+{
+	display: flex;
+	margin-left: auto;
+	flex-shrink: 0;
+	align-items: center;
+}
+
+.header__lang
+{
+	cursor: pointer;
+	margin-right: 18px;
+	display: flex;
+	align-items: center;
+
+	&:hover
+	{
+		transition: .2s;
+		color: #8FC19A;
+
+		.header-dropdown-wrapper
+		{
+			display: block;
+		}
+	}
+
+	&.expand
+	{
+		position: relative;
+
+		&:hover
+		{
+			.header-dropdown-wrapper
+			{
+				display: block;
+			}
+		}
+
+		&:after
+		{
+			content: url("https://assets.phalconphp.com/phalcon/images/svg/arrow.svg");
+			color: #fff;
+			position: relative;
+			top: -2px;
+			margin-left: 3px;
+		}
+	}
+}
+
+.flag-item
+{
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+
+.header-nav__burger
+{
+	display: none;
+	width: 20px;
+	height: 16px;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 0;
+	margin-right: 10px;
+
+	span
+	{
+		transition: ease all .135s;
+		display: block;
+		width: 20px;
+		height: 2px;
+		border-radius: 1px;
+		background-color: #fff;
+		position: relative;
+	}
+
+	&.active
+	{
+		span:nth-child(2)
+		{
+			display: none;
+		}
+		span:nth-child(1)
+		{
+			transform: rotate(45deg);
+			top: 7px;
+		}
+		span:nth-child(3)
+		{
+			transform: rotate(-45deg);
+			bottom: 7px;
+		}
+	}
+}
+
+.header__github
+{
+	margin-right: 10px;
+
+	a
+	{
+		display: block;
+		height: 20px;
+	}
+}
+
+.header__discord
+{
+	a
+	{
+		display: block;
+		height: 22px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px)
+{
+	.header
+	{
+		height: 66px;
+		padding: 13px 0;
+		font-size: 13px;
+	}
+
+	.header__logo
+	{
+		a
+		{
+			width: 34px;
+			height: 39px;
+			background-image: url("https://assets.phalconphp.com/phalcon/images/svg/phalcon-logo-35x39.svg");
+		}
+	}
+
+	.header__search
+	{
+		width: 110px;
+	}
+
+	.header-nav
+	{
+		margin-right: 28px;
+
+		& > li
+		{
+			margin-right: 20px;
+
+			&.expand
+			{
+				& > a::after
+				{
+					top: 0;
+				}
+			}
+		}
+	}
+
+	.header__right
+	{
+		align-items: center;
+	}
+
+	.header__github a
+	{
+		height: 20px;
+	}
+}
+
+@media (max-width: 767px)
+{
+	.header-nav, .header__search, .header__lang
+	{
+		display: none;
+	}
+
+	.header-nav__burger
+	{
+		display: flex;
+	}
+}
+
+
+
+.container
+{
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+@media (min-width: 768px)
+{
+	.container
+	{
+		width: 750px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+@media (min-width: 1024px)
+{
+	.container
+	{
+		width: 958px;
+	}
+}
+
+@media (min-width: 1280px)
+{
+	.container
+	{
+		width: 1200px;
+		padding-left: 10px;
+		padding-right: 10px;
+
+		&--short
+		{
+			width: 917px;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}

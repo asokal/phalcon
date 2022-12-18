@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/main.min.js"></script>
+<title>Phalcon</title>
+</head>
+<body>
+	<header class="header">
+	<div class="container">
+		<div class="header__left">
+			<button class="header-nav__burger" onclick="o2.header.openMobileNav(this);">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+
+			<div class="header__logo">
+				<a href="#"></a>
+
+				<div class="header__sitename">Framework</div>
+			</div>
+
+
+			<ul class="header-nav">
+				<li class="active">
+					<a href="#">
+						Discussions
+				</li>
+
+				<li>
+					<a href="#">
+						Activity
+					</a>
+				</li>
+
+				<li class="expand">
+					<a href="#">
+						Categories
+					</a>
+
+					<div class="header-dropdown-wrapper">
+						<ul class="header-dropdown header-dropdown--cat">
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="expand">
+					<a href="#">
+						Ecosystem
+					</a>
+
+					<div class="header-dropdown-wrapper">
+						<ul class="header-dropdown header-dropdown--eco">
+							<li class="header-dropdown__title">News</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Twitter</a>
+									</li>
+
+									<li>
+										<a href="#">Facebook</a>
+									</li>
+
+									<li>
+										<a href="#">Blog</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="header-dropdown__title">Help</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Forum</a>
+									</li>
+
+									<li>
+										<a href="#">Discord</a>
+									</li>
+
+									<li>
+										<a href="#">Meeputs</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+
+			<nav class="header-nav--mobile _navToggle" onclick="event.stopPropagation();">
+				<input type="text" class="header__search" placeholder="Search...">
+				<ul>
+					<li>
+						<a href="#">Download</a>
+					</li>
+					<li>
+						<a href="#">Documentation</a>
+					</li>
+					<li class="extendable extended">
+						<a href="#">Ecosystem</a>
+
+						<ul class="header-dropdown--mobile">
+							<li class="header-dropdown--mobile__title">News</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Twitter</a>
+									</li>
+
+									<li>
+										<a href="#">Facebook</a>
+									</li>
+
+									<li>
+										<a href="#">Blog</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="header-dropdown--mobile__title">Help</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Forum</a>
+									</li>
+
+									<li>
+										<a href="#">Discord</a>
+									</li>
+
+									<li>
+										<a href="#">Meeputs</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+					<li class="extendable extended">
+						<a href="#">
+							<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+							English
+						</a>
+						<ul class="header-dropdown--mobile header-dropdown--mobile-lang">
+							<li>
+								<a href="/cs-cz">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/106fae2ab93e1951f2125508f6ac6e08312f04f7/cs-cz.png" alt="Český">
+									Český
+								</a>
+							</li>
+							<li>
+								<a href="/de-de">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9d091161f3383cae8f26f3f8ef37938619e9484e/de-de.png" alt="Deutsch">
+									Deutsch
+								</a>
+							</li>
+							<li>
+								<a href="/el-gr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/cfbaefa507cd599b34109fd7c4b977c413d31f51/el-gr.png" alt="Ελληνικά">
+									Ελληνικά
+								</a>
+							</li>
+							<li>
+								<a href="/en-us">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+									English
+								</a>
+							</li>
+							<li>
+								<a href="/es-es">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/6e027e3c4dd6c445d327c3d21627c29e2cf67496/es-es.png" alt="Spanish">
+									Spanish
+								</a>
+							</li>
+							<li>
+								<a href="/fa-ir">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/ce62f31ca0885abfd85f8819090aaed94428e3d1/fa-ir.png" alt="Persian">
+									Persian
+								</a>
+							</li>
+							<li>
+								<a href="/fr-fr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7c38f7c5a94eef016859bc30d6daeb4cf2a3f883/fr-fr.png" alt="Française">
+									Française
+								</a>
+							</li>
+							<li>
+								<a href="/hu-hu">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d8190214169e4166df000d4f1972e78179bde96b/hu-hu.png" alt="Hungarian">
+									Hungarian
+								</a>
+							</li>
+							<li>
+								<a href="/id-id">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/c39ba9545bd55927dc43adf829dcbf22a1e0b7b4/id-id.png" alt="Indonesian">
+									Indonesian
+								</a>
+							</li>
+							<li>
+								<a href="/ja-jp">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2af3a51934e5cfd3a3a8fb32d56a733dfcd1045d/ja-jp.png" alt="Japanese">
+									Japanese
+								</a>
+							</li>
+							<li>
+								<a href="/ka-ge">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/bfa049f7fe40592ccfa4fae6c49d2c4bf2bff7ea/cb33f/assets/images/flags/ka-ge.png" alt="English">
+									English
+								</a>
+							</li>
+							<li>
+								<a href="/ko-kr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/f21f8d54b37715bfa217c493e6184941ad1a6ec6/ko-kr.png" alt="Korean">
+									Korean
+								</a>
+							</li>
+							<li>
+								<a href="/lv-lv">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/5b8003e3ac8a686c5f5ec2ec9c5cbabc19196601/lv-lv.png" alt="Latviski">
+									Latviski
+								</a>
+							</li>
+							<li>
+								<a href="/pt-br">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/2c878c62b2d4c38f088185da48f93019d0fcf825/6d981/assets/images/flags/pt-br.png" alt="Português (Brazil)">
+									Português (Brazil)
+								</a>
+							</li>
+							<li>
+								<a href="/ro-ro">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d9f5375b28fa82b6865408de568aba7515705806/ro-ro.png" alt="Română">
+									Română
+								</a>
+							</li>
+							<li>
+								<a href="/ru-ru">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/13dfbab8513aee8db39b2ffe5b1d90f0f941a028/ru-ru.png" alt="Pусский">
+									Pусский
+								</a>
+							</li>
+							<li>
+								<a href="/tr-tr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2d7ef3df68c4e17eee8e63587f1b7542f9842cb3/tr-tr.png" alt="Türkçe">
+									Türkçe
+								</a>
+							</li>
+							<li>
+								<a href="/uk-ua">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7ce4aca8e1b282211d4805c8768ae599dd18b397/uk-ua.png" alt="Ukranian">
+									Ukranian
+								</a>
+							</li>
+							<li>
+								<a href="/zh-cn">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2b65fd5d1a8a8b24ae022f2db7f68127326039c6/zh-cn.png" alt="简体中文">
+									简体中文
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="header__right">
+			<div class="header__lang expand">
+				<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+
+				<div class="header-dropdown-wrapper">
+					<ul class="header-dropdown header-dropdown--lang">
+						<li>
+							<a href="/cs-cz">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/106fae2ab93e1951f2125508f6ac6e08312f04f7/cs-cz.png" alt="Český">
+								Český
+							</a>
+						</li>
+						<li>
+							<a href="/de-de">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9d091161f3383cae8f26f3f8ef37938619e9484e/de-de.png" alt="Deutsch">
+								Deutsch
+							</a>
+						</li>
+						<li>
+							<a href="/el-gr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/cfbaefa507cd599b34109fd7c4b977c413d31f51/el-gr.png" alt="Ελληνικά">
+								Ελληνικά
+							</a>
+						</li>
+						<li>
+							<a href="/en-us">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+								English
+							</a>
+						</li>
+						<li>
+							<a href="/es-es">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/6e027e3c4dd6c445d327c3d21627c29e2cf67496/es-es.png" alt="Spanish">
+								Spanish
+							</a>
+						</li>
+						<li>
+							<a href="/fa-ir">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/ce62f31ca0885abfd85f8819090aaed94428e3d1/fa-ir.png" alt="Persian">
+								Persian
+							</a>
+						</li>
+						<li>
+							<a href="/fr-fr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7c38f7c5a94eef016859bc30d6daeb4cf2a3f883/fr-fr.png" alt="Française">
+								Française
+							</a>
+						</li>
+						<li>
+							<a href="/hu-hu">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d8190214169e4166df000d4f1972e78179bde96b/hu-hu.png" alt="Hungarian">
+								Hungarian
+							</a>
+						</li>
+						<li>
+							<a href="/id-id">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/c39ba9545bd55927dc43adf829dcbf22a1e0b7b4/id-id.png" alt="Indonesian">
+								Indonesian
+							</a>
+						</li>
+						<li>
+							<a href="/ja-jp">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2af3a51934e5cfd3a3a8fb32d56a733dfcd1045d/ja-jp.png" alt="Japanese">
+								Japanese
+							</a>
+						</li>
+						<li>
+							<a href="/ka-ge">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/bfa049f7fe40592ccfa4fae6c49d2c4bf2bff7ea/cb33f/assets/images/flags/ka-ge.png" alt="English">
+								English
+							</a>
+						</li>
+						<li>
+							<a href="/ko-kr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/f21f8d54b37715bfa217c493e6184941ad1a6ec6/ko-kr.png" alt="Korean">
+								Korean
+							</a>
+						</li>
+						<li>
+							<a href="/lv-lv">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/5b8003e3ac8a686c5f5ec2ec9c5cbabc19196601/lv-lv.png" alt="Latviski">
+								Latviski
+							</a>
+						</li>
+						<li>
+							<a href="/pt-br">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/2c878c62b2d4c38f088185da48f93019d0fcf825/6d981/assets/images/flags/pt-br.png" alt="Português (Brazil)">
+								Português (Brazil)
+							</a>
+						</li>
+						<li>
+							<a href="/ro-ro">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d9f5375b28fa82b6865408de568aba7515705806/ro-ro.png" alt="Română">
+								Română
+							</a>
+						</li>
+						<li>
+							<a href="/ru-ru">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/13dfbab8513aee8db39b2ffe5b1d90f0f941a028/ru-ru.png" alt="Pусский">
+								Pусский
+							</a>
+						</li>
+						<li>
+							<a href="/tr-tr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2d7ef3df68c4e17eee8e63587f1b7542f9842cb3/tr-tr.png" alt="Türkçe">
+								Türkçe
+							</a>
+						</li>
+						<li>
+							<a href="/uk-ua">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7ce4aca8e1b282211d4805c8768ae599dd18b397/uk-ua.png" alt="Ukranian">
+								Ukranian
+							</a>
+						</li>
+						<li>
+							<a href="/zh-cn">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2b65fd5d1a8a8b24ae022f2db7f68127326039c6/zh-cn.png" alt="简体中文">
+								简体中文
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<input type="text" class="header__search" placeholder="Search...">
+			<div class="header__github">
+				<a href="#">
+					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13.4557 11.4235C12.6752 11.4235 12.0422 12.2987 12.0422 13.3791C12.0422 14.4598 12.6752 15.3354 13.4557 15.3354C14.2357 15.3354 14.8683 14.4598 14.8683 13.3791C14.8685 12.2987 14.2357 11.4235 13.4557 11.4235ZM18.3754 6.33304C18.5363 5.93609 18.5443 3.68065 17.6863 1.52174C17.6863 1.52174 15.7174 1.73761 12.7385 3.78174C12.1141 3.60935 11.0567 3.52304 10 3.52304C8.94326 3.52304 7.8863 3.60913 7.2613 3.78152C4.28239 1.73761 2.31413 1.52174 2.31413 1.52174C1.45587 3.68065 1.46348 5.93609 1.62457 6.33304C0.616087 7.42804 0 8.74304 0 10.5398C0 18.3511 6.48022 18.4763 8.11609 18.4763C8.4863 18.4763 9.22217 18.4772 10 18.4783C10.7778 18.4772 11.5141 18.4763 11.8839 18.4763C13.5198 18.4763 20 18.3511 20 10.5398C20 8.74304 19.3839 7.42804 18.3754 6.33304ZM10.0307 17.5161H9.96957C5.86978 17.5161 2.67717 17.0265 2.67717 13.0422C2.67717 12.088 3.01391 11.202 3.81391 10.4667C5.14891 9.24152 7.40674 9.89044 9.96957 9.89044C9.97935 9.89044 9.98978 9.89022 10.0002 9.88978C10.0109 9.89022 10.0211 9.89044 10.0309 9.89044C12.5937 9.89044 14.8522 9.24174 16.1865 10.4667C16.9865 11.202 17.3233 12.088 17.3233 13.0422C17.323 17.0265 14.1304 17.5161 10.0307 17.5161ZM6.54435 11.4235C5.76435 11.4235 5.13174 12.2987 5.13174 13.3791C5.13174 14.4598 5.76435 15.3354 6.54435 15.3354C7.32522 15.3354 7.95783 14.4598 7.95783 13.3791C7.95761 12.2987 7.325 11.4235 6.54435 11.4235Z" fill="white"/>
+					</svg>
+				</a>
+			</div>
+			<div class="header__discord">
+				<a href="#">
+					<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 245 240">
+						<style>.st0{fill:#FFFFFF;}</style>
+						<path class="st0" d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"/>
+						<path class="st0" d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+	<main class="wrapper">
+		<h1 class="hidden-accessible">
+			Add Phalcon Project
+		</h1>
+		<div class="add-project">
+			<div class="container">
+				<nav class="breadcrumbs">
+					<a href="#" class="breadcrumbs__path">Projects</a>
+					<span class="breadcrumbs__curr-page">Add project</span>
+				</nav>
+
+				<form class="project-form" id="project-form">
+					<div class="project-data">
+						<label for="project-author" class="project-data__title">AUTHOR</label>
+						<div class="project-data__value">
+							<div class="input-wrap error">
+								<input type="text" class="input" placeholder="Enter author name" id="project-author">
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">Incorrect author name</span>
+						</div>
+					</div>
+					<div class="project-data">
+						<label for="project-author-email" class="project-data__title">E-mail</label>
+						<div class="project-data__value">
+							<div class="input-wrap">
+								<input type="text" class="input" placeholder="Enter author email" id="project-author-email">
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">Incorrect author email</span>
+						</div>
+					</div>
+					<div class="project-data">
+						<label for="project-name" class="project-data__title">Title</label>
+						<div class="project-data__value">
+							<div class="input-wrap">
+								<input type="text" class="input" placeholder="Enter project title" id="project-name">
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">Incorrect project title</span>
+						</div>
+					</div>
+					<div class="project-data">
+						<label for="project-url" class="project-data__title">URL</label>
+						<div class="project-data__value">
+							<div class="input-wrap">
+								<input type="text" class="input" placeholder="Enter project link" id="project-url">
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">Incorrect project link</span>
+						</div>
+					</div>
+					<div class="project-data">
+						<label for="project-tags" class="project-data__title">Tags</label>
+						<div class="project-data__value">
+							<div class="input-wrap">
+								<div class="input-wrap__search-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none">
+										<path fill="#273646" fill-opacity=".4" d="M13.79 12.26l-3.2-3.33A5.42 5.42 0 0 0 6.41 0a5.44 5.44 0 1 0 3.12 9.89l3.22 3.36a.7.7 0 0 0 1 .02c.29-.27.3-.72.03-1zM6.42 1.42a4.02 4.02 0 1 1 0 8.04 4.02 4.02 0 0 1 0-8.04z"/>
+									</svg>
+								</div>
+								<input type="text" class="input input--search" placeholder="Enter tag name" id="project-tags">
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">error message</span>
+							<div class="tags">
+								<div class="tag">
+									<span class="tag__text">
+										Phalconv4
+									</span>
+									<div class="tag__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none">
+											<g clip-path="url(#clip0)">
+												<path fill="#385B56" fill-opacity=".4" d="M4.12 3.5L6.87.75a.44.44 0 1 0-.62-.62L3.5 2.88.75.13a.44.44 0 1 0-.62.62L2.88 3.5.13 6.25a.44.44 0 1 0 .62.62L3.5 4.12l2.75 2.75a.44.44 0 0 0 .62 0 .44.44 0 0 0 0-.62L4.12 3.5z"/>
+											</g>
+											<defs>
+												<clipPath id="clip0">
+													<path fill="#fff" d="M0 0h7v7H0z"/>
+												</clipPath>
+											</defs>
+										</svg>
+									</div>
+								</div>
+								<div class="tag">
+									<span class="tag__text">
+										ACL
+									</span>
+									<div class="tag__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none">
+											<g clip-path="url(#clip0)">
+												<path fill="#385B56" fill-opacity=".4" d="M4.12 3.5L6.87.75a.44.44 0 1 0-.62-.62L3.5 2.88.75.13a.44.44 0 1 0-.62.62L2.88 3.5.13 6.25a.44.44 0 1 0 .62.62L3.5 4.12l2.75 2.75a.44.44 0 0 0 .62 0 .44.44 0 0 0 0-.62L4.12 3.5z"/>
+											</g>
+											<defs>
+												<clipPath id="clip0">
+													<path fill="#fff" d="M0 0h7v7H0z"/>
+												</clipPath>
+											</defs>
+										</svg>
+									</div>
+								</div>
+								<div class="tag">
+									<span class="tag__text">
+										AWS
+									</span>
+									<div class="tag__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" fill="none">
+											<g clip-path="url(#clip0)">
+												<path fill="#385B56" fill-opacity=".4" d="M4.12 3.5L6.87.75a.44.44 0 1 0-.62-.62L3.5 2.88.75.13a.44.44 0 1 0-.62.62L2.88 3.5.13 6.25a.44.44 0 1 0 .62.62L3.5 4.12l2.75 2.75a.44.44 0 0 0 .62 0 .44.44 0 0 0 0-.62L4.12 3.5z"/>
+											</g>
+											<defs>
+												<clipPath id="clip0">
+													<path fill="#fff" d="M0 0h7v7H0z"/>
+												</clipPath>
+											</defs>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="project-data project-data--big">
+						<label for="project-preview" class="project-data__title">Preview image</label>
+						<div class="project-data__value">
+							<div class="upload _uploadPreview">
+								<label class="upload-item" for="project-preview">
+									<div class="upload__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none">
+											<path fill="#273646" fill-opacity=".4" d="M63.43 30.49A22.4 22.4 0 0 0 41.06 8.42 22.31 22.31 0 0 0 19.17 26.2h-.21A18.98 18.98 0 0 0 0 45.15c0 10.46 8.5 18.96 18.96 18.96H32.2a1.7 1.7 0 0 0 0-3.4H18.96A15.56 15.56 0 0 1 3.4 45.14a15.56 15.56 0 0 1 17.03-15.47 1.7 1.7 0 0 0 1.85-1.47 18.98 18.98 0 0 1 18.77-16.38c10.45 0 18.96 8.5 18.96 18.97 0 .37-.03.76-.06 1.17v.18a1.7 1.7 0 0 0 1.86 1.81A13.42 13.42 0 0 1 76.58 47.3c0 7.4-6 13.41-13.4 13.41H49.27a1.7 1.7 0 0 0 0 3.41H63.2C72.45 64.11 80 56.57 80 47.3c0-9.19-7.4-16.68-16.57-16.81z"/>
+											<path fill="#273646" fill-opacity=".4" d="M41.06 16.44a14.4 14.4 0 0 0-14.21 12.4 1.7 1.7 0 0 0 3.38.46 10.97 10.97 0 0 1 10.83-9.45 1.7 1.7 0 1 0 0-3.41zM48.81 50l-6.2-5.54a2.82 2.82 0 0 0-3.76 0l-6.2 5.55a1.7 1.7 0 0 0 2.27 2.54l4.1-3.66v20.99a1.7 1.7 0 1 0 3.42 0v-21l4.1 3.67a1.7 1.7 0 0 0 2.41-.13 1.7 1.7 0 0 0-.14-2.41z"/>
+										</svg>
+									</div>
+									<div class="upload__button">Upload Image</div>
+									<input type="file" name="sreens" class="upload__input _uploadPreviewInput" id="project-preview" multiple />
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="project-data project-data--big">
+						<label for="project-screenshots" class="project-data__title">Screenshots</label>
+						<div class="project-data__value">
+							<div class="upload _uploadScreens">
+								<label class="upload-item" for="project-screenshots">
+									<div class="upload__icon">
+										<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none">
+											<path fill="#273646" fill-opacity=".4" d="M63.43 30.49A22.4 22.4 0 0 0 41.06 8.42 22.31 22.31 0 0 0 19.17 26.2h-.21A18.98 18.98 0 0 0 0 45.15c0 10.46 8.5 18.96 18.96 18.96H32.2a1.7 1.7 0 0 0 0-3.4H18.96A15.56 15.56 0 0 1 3.4 45.14a15.56 15.56 0 0 1 17.03-15.47 1.7 1.7 0 0 0 1.85-1.47 18.98 18.98 0 0 1 18.77-16.38c10.45 0 18.96 8.5 18.96 18.97 0 .37-.03.76-.06 1.17v.18a1.7 1.7 0 0 0 1.86 1.81A13.42 13.42 0 0 1 76.58 47.3c0 7.4-6 13.41-13.4 13.41H49.27a1.7 1.7 0 0 0 0 3.41H63.2C72.45 64.11 80 56.57 80 47.3c0-9.19-7.4-16.68-16.57-16.81z"/>
+											<path fill="#273646" fill-opacity=".4" d="M41.06 16.44a14.4 14.4 0 0 0-14.21 12.4 1.7 1.7 0 0 0 3.38.46 10.97 10.97 0 0 1 10.83-9.45 1.7 1.7 0 1 0 0-3.41zM48.81 50l-6.2-5.54a2.82 2.82 0 0 0-3.76 0l-6.2 5.55a1.7 1.7 0 0 0 2.27 2.54l4.1-3.66v20.99a1.7 1.7 0 1 0 3.42 0v-21l4.1 3.67a1.7 1.7 0 0 0 2.41-.13 1.7 1.7 0 0 0-.14-2.41z"/>
+										</svg>
+									</div>
+									<div class="upload__button">Upload Image</div>
+									<input type="file" name="sreens" class="upload__input _uploadScreenshotsInput" id="project-screenshots" multiple />
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="project-data project-data--big">
+						<label for="project-descr" class="project-data__title">Description</label>
+						<div class="project-data__value">
+							<div class="input-wrap">
+								<textarea placeholder="Enter the Description" class="input" id="project-descr"></textarea>
+								<div class="input-wrap__error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none">
+										<g fill="#E15252" clip-path="url(#clip0)">
+											<path d="M11.95 10.87L6.36.73a.42.42 0 0 0-.72 0L.05 10.87a.42.42 0 0 0 .37.62h11.16a.42.42 0 0 0 .37-.62zm-10.83-.21L6 1.79l4.88 8.87H1.12z"/>
+											<path d="M5.48 4.75v3a.52.52 0 0 0 1.04 0v-3a.52.52 0 0 0-1.04 0zM6 8.82a.55.55 0 1 0 0 1.1.55.55 0 0 0 0-1.1z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+												<path fill="#fff" d="M0 0h12v12H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+							</div>
+							<span class="project-data__error-text">Incorrect project link</span>
+						</div>
+					</div>
+					<button class="form-button">Add Project</button>
+				</form>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">
+	<div class="container">
+		<nav>
+			<ul class="footer-nav">
+				<li>
+					<a href="#">Documentation</a>
+				</li>
+				<li>
+					<a href="#">Ecosystem</a>
+				</li>
+				<li>
+					<a href="#">Sponsors</a>
+				</li>
+				<li>
+					<a href="#">Sponsors</a>
+				</li>
+				<li>
+					<a href="#">Blog</a>
+				</li>
+				<li>
+					<a href="#">Team</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="footer__license">
+			Phalcon is an open-source PHP framework  built as a C-extension.
+			<br>
+			It is available under the  new BSD License.
+		</div>
+
+		<div class="footer__supported">
+			<span>Supported By</span>
+
+			<a href="#" class="footer__supported-logo">
+				<svg width="38" height="31" viewBox="0 0 38 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15.375 29.3529C22.9283 29.3529 29.0514 23.2298 29.0514 15.6765C29.0514 8.12317 22.9283 2 15.375 2C7.82165 2 1.69849 8.12317 1.69849 15.6765C1.69849 23.2298 7.82165 29.3529 15.375 29.3529Z" stroke="#273646" stroke-opacity="0.7" stroke-width="3"/>
+					<path d="M33.9044 23.6177H32.1397V30.6765H33.9044V23.6177Z" fill="#273646" fill-opacity="0.7"/>
+					<path d="M37.4338 23.6177H35.6691V30.6765H37.4338V23.6177Z" fill="#273646" fill-opacity="0.7"/>
+				</svg>
+			</a>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
+

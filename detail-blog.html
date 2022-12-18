@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/main.min.js"></script>
+<title>Phalcon</title>
+</head>
+<body>
+	<header class="header">
+	<div class="container">
+		<div class="header__left">
+			<button class="header-nav__burger" onclick="o2.header.openMobileNav(this);">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+
+			<div class="header__logo">
+				<a href="#"></a>
+
+				<div class="header__sitename">Framework</div>
+			</div>
+
+
+			<ul class="header-nav">
+				<li class="active">
+					<a href="#">
+						Discussions
+				</li>
+
+				<li>
+					<a href="#">
+						Activity
+					</a>
+				</li>
+
+				<li class="expand">
+					<a href="#">
+						Categories
+					</a>
+
+					<div class="header-dropdown-wrapper">
+						<ul class="header-dropdown header-dropdown--cat">
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="expand">
+					<a href="#">
+						Ecosystem
+					</a>
+
+					<div class="header-dropdown-wrapper">
+						<ul class="header-dropdown header-dropdown--eco">
+							<li class="header-dropdown__title">News</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Twitter</a>
+									</li>
+
+									<li>
+										<a href="#">Facebook</a>
+									</li>
+
+									<li>
+										<a href="#">Blog</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="header-dropdown__title">Help</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Forum</a>
+									</li>
+
+									<li>
+										<a href="#">Discord</a>
+									</li>
+
+									<li>
+										<a href="#">Meeputs</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+
+			<nav class="header-nav--mobile _navToggle" onclick="event.stopPropagation();">
+				<input type="text" class="header__search" placeholder="Search...">
+				<ul>
+					<li>
+						<a href="#">Download</a>
+					</li>
+					<li>
+						<a href="#">Documentation</a>
+					</li>
+					<li class="extendable extended">
+						<a href="#">Ecosystem</a>
+
+						<ul class="header-dropdown--mobile">
+							<li class="header-dropdown--mobile__title">News</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Twitter</a>
+									</li>
+
+									<li>
+										<a href="#">Facebook</a>
+									</li>
+
+									<li>
+										<a href="#">Blog</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="header-dropdown--mobile__title">Help</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Forum</a>
+									</li>
+
+									<li>
+										<a href="#">Discord</a>
+									</li>
+
+									<li>
+										<a href="#">Meeputs</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+					<li class="extendable extended">
+						<a href="#">
+							<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+							English
+						</a>
+						<ul class="header-dropdown--mobile header-dropdown--mobile-lang">
+							<li>
+								<a href="/cs-cz">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/106fae2ab93e1951f2125508f6ac6e08312f04f7/cs-cz.png" alt="Český">
+									Český
+								</a>
+							</li>
+							<li>
+								<a href="/de-de">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9d091161f3383cae8f26f3f8ef37938619e9484e/de-de.png" alt="Deutsch">
+									Deutsch
+								</a>
+							</li>
+							<li>
+								<a href="/el-gr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/cfbaefa507cd599b34109fd7c4b977c413d31f51/el-gr.png" alt="Ελληνικά">
+									Ελληνικά
+								</a>
+							</li>
+							<li>
+								<a href="/en-us">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+									English
+								</a>
+							</li>
+							<li>
+								<a href="/es-es">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/6e027e3c4dd6c445d327c3d21627c29e2cf67496/es-es.png" alt="Spanish">
+									Spanish
+								</a>
+							</li>
+							<li>
+								<a href="/fa-ir">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/ce62f31ca0885abfd85f8819090aaed94428e3d1/fa-ir.png" alt="Persian">
+									Persian
+								</a>
+							</li>
+							<li>
+								<a href="/fr-fr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7c38f7c5a94eef016859bc30d6daeb4cf2a3f883/fr-fr.png" alt="Française">
+									Française
+								</a>
+							</li>
+							<li>
+								<a href="/hu-hu">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d8190214169e4166df000d4f1972e78179bde96b/hu-hu.png" alt="Hungarian">
+									Hungarian
+								</a>
+							</li>
+							<li>
+								<a href="/id-id">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/c39ba9545bd55927dc43adf829dcbf22a1e0b7b4/id-id.png" alt="Indonesian">
+									Indonesian
+								</a>
+							</li>
+							<li>
+								<a href="/ja-jp">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2af3a51934e5cfd3a3a8fb32d56a733dfcd1045d/ja-jp.png" alt="Japanese">
+									Japanese
+								</a>
+							</li>
+							<li>
+								<a href="/ka-ge">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/bfa049f7fe40592ccfa4fae6c49d2c4bf2bff7ea/cb33f/assets/images/flags/ka-ge.png" alt="English">
+									English
+								</a>
+							</li>
+							<li>
+								<a href="/ko-kr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/f21f8d54b37715bfa217c493e6184941ad1a6ec6/ko-kr.png" alt="Korean">
+									Korean
+								</a>
+							</li>
+							<li>
+								<a href="/lv-lv">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/5b8003e3ac8a686c5f5ec2ec9c5cbabc19196601/lv-lv.png" alt="Latviski">
+									Latviski
+								</a>
+							</li>
+							<li>
+								<a href="/pt-br">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/2c878c62b2d4c38f088185da48f93019d0fcf825/6d981/assets/images/flags/pt-br.png" alt="Português (Brazil)">
+									Português (Brazil)
+								</a>
+							</li>
+							<li>
+								<a href="/ro-ro">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d9f5375b28fa82b6865408de568aba7515705806/ro-ro.png" alt="Română">
+									Română
+								</a>
+							</li>
+							<li>
+								<a href="/ru-ru">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/13dfbab8513aee8db39b2ffe5b1d90f0f941a028/ru-ru.png" alt="Pусский">
+									Pусский
+								</a>
+							</li>
+							<li>
+								<a href="/tr-tr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2d7ef3df68c4e17eee8e63587f1b7542f9842cb3/tr-tr.png" alt="Türkçe">
+									Türkçe
+								</a>
+							</li>
+							<li>
+								<a href="/uk-ua">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7ce4aca8e1b282211d4805c8768ae599dd18b397/uk-ua.png" alt="Ukranian">
+									Ukranian
+								</a>
+							</li>
+							<li>
+								<a href="/zh-cn">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2b65fd5d1a8a8b24ae022f2db7f68127326039c6/zh-cn.png" alt="简体中文">
+									简体中文
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="header__right">
+			<div class="header__lang expand">
+				<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+
+				<div class="header-dropdown-wrapper">
+					<ul class="header-dropdown header-dropdown--lang">
+						<li>
+							<a href="/cs-cz">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/106fae2ab93e1951f2125508f6ac6e08312f04f7/cs-cz.png" alt="Český">
+								Český
+							</a>
+						</li>
+						<li>
+							<a href="/de-de">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9d091161f3383cae8f26f3f8ef37938619e9484e/de-de.png" alt="Deutsch">
+								Deutsch
+							</a>
+						</li>
+						<li>
+							<a href="/el-gr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/cfbaefa507cd599b34109fd7c4b977c413d31f51/el-gr.png" alt="Ελληνικά">
+								Ελληνικά
+							</a>
+						</li>
+						<li>
+							<a href="/en-us">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+								English
+							</a>
+						</li>
+						<li>
+							<a href="/es-es">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/6e027e3c4dd6c445d327c3d21627c29e2cf67496/es-es.png" alt="Spanish">
+								Spanish
+							</a>
+						</li>
+						<li>
+							<a href="/fa-ir">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/ce62f31ca0885abfd85f8819090aaed94428e3d1/fa-ir.png" alt="Persian">
+								Persian
+							</a>
+						</li>
+						<li>
+							<a href="/fr-fr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7c38f7c5a94eef016859bc30d6daeb4cf2a3f883/fr-fr.png" alt="Française">
+								Française
+							</a>
+						</li>
+						<li>
+							<a href="/hu-hu">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d8190214169e4166df000d4f1972e78179bde96b/hu-hu.png" alt="Hungarian">
+								Hungarian
+							</a>
+						</li>
+						<li>
+							<a href="/id-id">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/c39ba9545bd55927dc43adf829dcbf22a1e0b7b4/id-id.png" alt="Indonesian">
+								Indonesian
+							</a>
+						</li>
+						<li>
+							<a href="/ja-jp">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2af3a51934e5cfd3a3a8fb32d56a733dfcd1045d/ja-jp.png" alt="Japanese">
+								Japanese
+							</a>
+						</li>
+						<li>
+							<a href="/ka-ge">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/bfa049f7fe40592ccfa4fae6c49d2c4bf2bff7ea/cb33f/assets/images/flags/ka-ge.png" alt="English">
+								English
+							</a>
+						</li>
+						<li>
+							<a href="/ko-kr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/f21f8d54b37715bfa217c493e6184941ad1a6ec6/ko-kr.png" alt="Korean">
+								Korean
+							</a>
+						</li>
+						<li>
+							<a href="/lv-lv">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/5b8003e3ac8a686c5f5ec2ec9c5cbabc19196601/lv-lv.png" alt="Latviski">
+								Latviski
+							</a>
+						</li>
+						<li>
+							<a href="/pt-br">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/2c878c62b2d4c38f088185da48f93019d0fcf825/6d981/assets/images/flags/pt-br.png" alt="Português (Brazil)">
+								Português (Brazil)
+							</a>
+						</li>
+						<li>
+							<a href="/ro-ro">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d9f5375b28fa82b6865408de568aba7515705806/ro-ro.png" alt="Română">
+								Română
+							</a>
+						</li>
+						<li>
+							<a href="/ru-ru">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/13dfbab8513aee8db39b2ffe5b1d90f0f941a028/ru-ru.png" alt="Pусский">
+								Pусский
+							</a>
+						</li>
+						<li>
+							<a href="/tr-tr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2d7ef3df68c4e17eee8e63587f1b7542f9842cb3/tr-tr.png" alt="Türkçe">
+								Türkçe
+							</a>
+						</li>
+						<li>
+							<a href="/uk-ua">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7ce4aca8e1b282211d4805c8768ae599dd18b397/uk-ua.png" alt="Ukranian">
+								Ukranian
+							</a>
+						</li>
+						<li>
+							<a href="/zh-cn">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2b65fd5d1a8a8b24ae022f2db7f68127326039c6/zh-cn.png" alt="简体中文">
+								简体中文
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<input type="text" class="header__search" placeholder="Search...">
+			<div class="header__github">
+				<a href="#">
+					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13.4557 11.4235C12.6752 11.4235 12.0422 12.2987 12.0422 13.3791C12.0422 14.4598 12.6752 15.3354 13.4557 15.3354C14.2357 15.3354 14.8683 14.4598 14.8683 13.3791C14.8685 12.2987 14.2357 11.4235 13.4557 11.4235ZM18.3754 6.33304C18.5363 5.93609 18.5443 3.68065 17.6863 1.52174C17.6863 1.52174 15.7174 1.73761 12.7385 3.78174C12.1141 3.60935 11.0567 3.52304 10 3.52304C8.94326 3.52304 7.8863 3.60913 7.2613 3.78152C4.28239 1.73761 2.31413 1.52174 2.31413 1.52174C1.45587 3.68065 1.46348 5.93609 1.62457 6.33304C0.616087 7.42804 0 8.74304 0 10.5398C0 18.3511 6.48022 18.4763 8.11609 18.4763C8.4863 18.4763 9.22217 18.4772 10 18.4783C10.7778 18.4772 11.5141 18.4763 11.8839 18.4763C13.5198 18.4763 20 18.3511 20 10.5398C20 8.74304 19.3839 7.42804 18.3754 6.33304ZM10.0307 17.5161H9.96957C5.86978 17.5161 2.67717 17.0265 2.67717 13.0422C2.67717 12.088 3.01391 11.202 3.81391 10.4667C5.14891 9.24152 7.40674 9.89044 9.96957 9.89044C9.97935 9.89044 9.98978 9.89022 10.0002 9.88978C10.0109 9.89022 10.0211 9.89044 10.0309 9.89044C12.5937 9.89044 14.8522 9.24174 16.1865 10.4667C16.9865 11.202 17.3233 12.088 17.3233 13.0422C17.323 17.0265 14.1304 17.5161 10.0307 17.5161ZM6.54435 11.4235C5.76435 11.4235 5.13174 12.2987 5.13174 13.3791C5.13174 14.4598 5.76435 15.3354 6.54435 15.3354C7.32522 15.3354 7.95783 14.4598 7.95783 13.3791C7.95761 12.2987 7.325 11.4235 6.54435 11.4235Z" fill="white"/>
+					</svg>
+				</a>
+			</div>
+			<div class="header__discord">
+				<a href="#">
+					<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 245 240">
+						<style>.st0{fill:#FFFFFF;}</style>
+						<path class="st0" d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"/>
+						<path class="st0" d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+	<main class="wrapper">
+    <div class="phalcon-blog">
+      <div class="container">
+        <div class="phalcon-blog__main">
+          <div class="phalcon-blog-detail">
+                        <h2 itemprop="name headline" class="headline">
+                            Phalcon local development environment setup
+                        </h2>
+                        <div class="phalcon-blog-detail__info">
+                            <div class="phalcon-blog-detail__date">
+                                Dec 23, 2018
+                            </div>
+                            <div class="phalcon-blog-detail__author">Phalcon Team</div>
+                            <div class="phalcon-blog-detail__author">Read time: 9 minutes</div>
+                        </div>
+
+                        <p>Phalcon has always had a small development community and not that many pull requests, offering bug fixes and enhancements, compared to other PHP frameworks. This was primarily due to the fact that most developers do not really know C. To help developers contribute, we have created a new language called <a href="https://zephir-lang.com">Zephir</a>, which has a very similar syntax to PHP or Javascript. In <a href="https://blog.phalconphp.com/post/phalcon-2-0-the-future">2003</a> we announced this plan and a few months later we released the language and rewrote all the Phalcon code in Zephir. We have been using Zephir ever since for developing Phalcon.
+    <!--more--></p>
+    <h3 id="the-problem">The problem</h3>
+    <p>Having a framework that is rich in features requires a development environment that will offer all those features and related services. For instance one needs to install <code class="highlighter-rouge">MySQL</code>, <code class="highlighter-rouge">Postgresql</code> and <code class="highlighter-rouge">Sqlite</code> to be able to check whether functionality in the ORM will be the same when using any of these adapters for your database needs. Additionally the relevant extensions for PHP have to be installed in the development system.</p>
+
+    <p>When looking at all the functionality that Phalcon offers, just to run the testing suite, one needs a great number of extensions as well as services installed (Redis, Memcached, Beanstalkd etc.)</p>
+
+    <p>If one considers the PHP version also (PHP 7.2, 7.3 etc.), developing for Phalcon is not an easy task, because of all these prerequisites.</p>
+
+    <h3 id="solution">Solution</h3>
+    <p>We have tried in the past to create a development environment based on docker, but after a while, maintaining this environment was very taxing for the core team.</p>
+
+    <p>Recently however, we have redoubled our efforts to create this environment and we decided to use <a href="https://nanobox.io">nanobox</a>. For those that do not know, nanobox is a “wrapper” to docker which creates a unique environment in your machine, ready to use. The environment is folder based so you could potentially have two folders where you have cloned Phalcon, and use the PHP 7.2 on one and the 7.3 on the other. Each of those environments is completely isolated. We have been using nanobox for a while now and it is working extremely well.</p>
+
+    <h3 id="installation">Installation</h3>
+    <p>You will first need to have docker installed on your machine. Instructions on how to do that, can be found <a href="https://docs.docker.com/engine/installation/">here</a>.</p>
+
+    <p>Go to <a href="https://nanobox.io">https://nanobox.io</a> and create an account if you do not have one already, so that you can download the nanobox installation file for your platform.</p>
+
+    <p>Once the file is downloaded, install it.</p>
+
+    <h3 id="running-the-environment">Running the environment</h3>
+    <h4 id="fork-the-repository">Fork the repository</h4>
+    <p>Fork the <a href="https://github.com/phalcon/cphalcon">cphalcon</a> to your github account, if you have not done so already. Visit the <a href="https://github.com/phalcon/cphalcon">cphalcon</a> page on your browser and click the <code class="highlighter-rouge">Fork</code> button at the top right of the screen.</p>
+
+    <h4 id="clone-the-fork">Clone the fork</h4>
+    <p>Now you will need to clone the forked repository to a folder of your choice. The example below assumes that the github account is <code class="highlighter-rouge">niden</code> - change it to your own.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:niden/cphalcon
+    </code></pre></div></div>
+    <h4 id="copy-the-boxfile">Copy the boxfile</h4>
+    <p>Nanobox reads a file called <code class="highlighter-rouge">boxfile.yml</code> and located in the root of your folder. There are two files supplied in Phalcon that you can use to develop with. One for PHP 7.2 and one for 7.3. Copy one of them to the root of the folder you have cloned your repository.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ./cphalcon
+    <span class="nb">cp</span> <span class="nt">-v</span> ./tests/_ci/nanobox/boxfile.7.2.yml ./boxfile.yml
+
+    </code></pre></div></div>
+    <p>You will now end up with a <code class="highlighter-rouge">boxfile.yml</code> file at the root of your project.</p>
+
+    <h4 id="configure-nanobox">Configure nanobox</h4>
+    <p>Now we need to run nanobox for the first time. Since this will be the first time you run nanobox, it will ask you to configure it. The installation is very simple</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nanobox run
+    </code></pre></div></div>
+    <p>It will ask you to log in first. Type your nanobox username and password, the same credentials you used when creating the nanobox account, so that you can download the installation file.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nanobox login
+    Nanobox Username: niden
+    Nanobox Password:
+    </code></pre></div></div>
+
+    <p>You will also need to configure nanobox. The next step is to decide how you want nanobox to work. There are two options</p>
+    <ul>
+      <li>a lightweight VM (Virtualbox)</li>
+      <li>docker native</li>
+    </ul>
+
+    <p>It is highly recommended you use docker (hence the requirement above to ensure that you have docker installed).</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CONFIGURE NANOBOX
+    <span class="nt">---------------------------------------------------------------</span>
+    Please answer the following questions so we can customize your
+    nanobox configuration. Feel free to update your config at any
+    <span class="nb">time </span>by running: <span class="s1">'nanobox configure'</span>
+
+    <span class="o">(</span>Learn more at : https://docs.nanobox.io/local-config/configure-nanobox/<span class="o">)</span>
+
+    How would you like to run nanobox?
+      a<span class="o">)</span> Inside a lightweight VM
+      b<span class="o">)</span> Via Docker Native
+
+      Note : Mac <span class="nb">users</span>, we strongly recommend choosing <span class="o">(</span>a<span class="o">)</span> <span class="k">until </span>Docker Native
+             resolves an issue causing slow speeds : http://bit.ly/2jYFfWQ
+
+    Answer:
+    </code></pre></div></div>
+
+    <h4 id="run-nanobox">Run nanobox</h4>
+    <p>After finishing the configuration, you will see nanobox trying to download a lot of packages and containers. This is normal and it is going to take a while depending on the connection speed you have. After packages and containers are downloaded, subsequent runs will use cached copies of those packages (unless there is an update).</p>
+
+    <p>Once the whole process finishes, you will end up with a screen that looks like this:</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Preparing environment :
+
+
+                                       <span class="k">**</span>
+                                    <span class="k">********</span>
+                                 <span class="k">***************</span>
+                              <span class="k">*********************</span>
+                                <span class="k">*****************</span>
+                              ::    <span class="k">*********</span>    ::
+                                 ::    <span class="k">***</span>    ::
+                               ++   :::   :::   ++
+                                  ++   :::   ++
+                                     ++   ++
+                                        +
+                        _  _ ____ _  _ ____ ___  ____ _  _
+                        |<span class="se">\ </span>| |__| |<span class="se">\ </span>| |  | |__<span class="o">)</span> |  |  <span class="se">\/</span>
+                        | <span class="se">\|</span> |  | | <span class="se">\|</span> |__| |__<span class="o">)</span> |__| _/<span class="se">\_</span>
+
+    <span class="nt">--------------------------------------------------------------------------------</span>
+    + You are <span class="k">in </span>a Linux container
+    + Your <span class="nb">local source </span>code has been mounted into the container
+    + Changes to your code <span class="k">in </span>either the container or desktop will be mirrored
+    + If you run a server, access it at <span class="o">&gt;&gt;</span> 172.18.0.2
+    <span class="nt">--------------------------------------------------------------------------------</span>
+    </code></pre></div></div>
+
+    <p>You are now inside the environment with all the extensions and services you need. Please note that the IP shown will most likely be different than the one displayed above.</p>
+
+    <h4 id="composer">Composer</h4>
+    <p>Just in case update composer:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer <span class="nb">install</span>
+    </code></pre></div></div>
+
+    <h4 id="check-zephir">Check Zephir</h4>
+    <p>Zephir is already installed in the environment. Just check it:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zephir <span class="nb">help</span>
+    </code></pre></div></div>
+    <p>A screen like the one below should appear:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage:
+      <span class="nb">help</span> <span class="o">[</span>options] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>&lt;command_name&gt;]
+
+    Arguments:
+      <span class="nb">command               </span>The <span class="nb">command </span>to execute
+      command_name          The <span class="nb">command </span>name <span class="o">[</span>default: <span class="s2">"help"</span><span class="o">]</span>
+
+    Options:
+          <span class="nt">--format</span><span class="o">=</span>FORMAT   The output format <span class="o">(</span>txt, xml, json, or md<span class="o">)</span> <span class="o">[</span>default: <span class="s2">"txt"</span><span class="o">]</span>
+          <span class="nt">--raw</span>             To output raw <span class="nb">command help</span>
+      <span class="nt">-h</span>, <span class="nt">--help</span>            Display this <span class="nb">help </span>message
+      <span class="nt">-q</span>, <span class="nt">--quiet</span>           Do not output any message
+      <span class="nt">-V</span>, <span class="nt">--version</span>         Display this application version
+          <span class="nt">--ansi</span>            Force ANSI output
+          <span class="nt">--no-ansi</span>         Disable ANSI output
+      <span class="nt">-n</span>, <span class="nt">--no-interaction</span>  Do not ask any interactive question
+          <span class="nt">--dumpversion</span>     Print the Zephir version — and don<span class="s1">'t do anything else
+      -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+    Help:
+      The help command displays help for a given command:
+
+        php /data/bin/zephir help list
+
+      You can also output the help in other formats by using the --format option:
+
+        php /data/bin/zephir help --format=xml list
+
+      To display the list of available commands, please use the list command.
+    </span></code></pre></div></div>
+
+    <h4 id="compile-phalcon">Compile Phalcon</h4>
+    <p>Phalcon is not compiled yet. We need to instruct Zephir to do that:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zephir fullclean
+    zephir build
+    </code></pre></div></div>
+
+    <h4 id="check-extensions">Check extensions</h4>
+    <p>Type</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-m</span>
+    </code></pre></div></div>
+
+    <p>and you will see:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>PHP Modules]
+    apcu
+    Core
+    ctype
+    ....
+    PDO
+    pdo_mysql
+    pdo_pgsql
+    pdo_sqlite
+    phalcon
+    Phar
+    psr
+    redis
+    ...
+
+    <span class="o">[</span>Zend Modules]
+    Xdebug
+    </code></pre></div></div>
+
+    <p>Note that Phalcon v4+ requires the <a href="https://github.com/jbboehr/php-psr">PSR</a> extension to be loaded before Phalcon. In this environment we have compiled it for you. Once you see <code class="highlighter-rouge">phalcon</code> in the list, you have the extension compiled and ready to use.</p>
+
+    <h3 id="running-tests">Running tests</h3>
+    <h4 id="unit">Unit</h4>
+    <p>Now that the environment is set up, we need to run the tests. The testing framework Phalcon uses is <a href="https://codeception.com">Codeception</a>. For a basic introduction you can check <a href="http://codeception.com/docs/01-Introduction">this</a> page. Also for the list of the commands, you can check <a href="http://codeception.com/docs/reference/Commands">here</a>.</p>
+
+    <p>We need to first build the Codeception base classes. This needs to happen every time new functionality is introduced in Codeception’s helpers.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>codecept build
+    </code></pre></div></div>
+    <p>The output should show:</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Building Actor classes <span class="k">for </span>suites: cli, integration, unit
+     -&gt; CliTesterActions.php generated successfully. 0 methods added
+    <span class="se">\C</span>liTester includes modules: Asserts, Cli, <span class="se">\H</span>elper<span class="se">\C</span>li, <span class="se">\H</span>elper<span class="se">\U</span>nit
+     -&gt; IntegrationTesterActions.php generated successfully. 0 methods added
+    <span class="se">\I</span>ntegrationTester includes modules: Asserts, Filesystem, Helper<span class="se">\I</span>ntegration, Helper<span class="se">\P</span>halconLibmemcached, Helper<span class="se">\U</span>nit, Phalcon, Redis
+     -&gt; UnitTesterActions.php generated successfully. 0 methods added
+    <span class="se">\U</span>nitTester includes modules: Asserts, Filesystem, Redis, Helper<span class="se">\U</span>nit, Helper<span class="se">\P</span>halconCacheFile, Helper<span class="se">\P</span>halconLibmemcached
+    </code></pre></div></div>
+
+    <p>Now we can run the tests:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>codecept run unit
+    </code></pre></div></div>
+
+    <p>This will start running the unit testing suite. You will see a lot of tests and assertions. At the time of this blog post, we have <code class="highlighter-rouge">Tests: 2884, Assertions: 6987, Skipped: 1478</code> unit tests. The reason for so many skipped tests is because we created test stubs for every component and every method in each component. This was so as to create awareness on what needs to be checked and what components/methods we need to write tests for. Of course some of the test stubs are duplicate or obsolete. Those will be deleted once the relevant component is checked and tests written for it. Our goal is to get as close to 100% code coverage as possible. If we manage to get to 100% that would be great!</p>
+
+    <h4 id="integration">Integration</h4>
+    <p>Integration tests need to access the databases. These databases are already available in the environment. To populate the databases you will need to run the following script:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./tests/_ci/nanobox/setup-dbs-nanobox.sh
+    </code></pre></div></div>
+
+    <p>If you need to access the databases themselves, you will need the connection information. Nanobox creates that for you and stores it in environment variables. You can easily check those variables and if need be write them down.</p>
+
+    <p>Open a separate terminal and navigate to the same folder where you have nanobox running from and type:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ./cphalcon/
+    nanobox info <span class="nb">local</span>
+    </code></pre></div></div>
+
+    <p>You will see an output as the one below:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">----------------------------------------</span>
+    cphalcon <span class="o">(</span>dev<span class="o">)</span>              Status: up
+    <span class="nt">----------------------------------------</span>
+
+    Mount Path: /Work/niden/cphalcon
+    Env IP: 172.18.0.2
+
+    data.beanstalkd
+      IP      : 172.18.0.4
+
+    data.memcached
+      IP      : 172.18.0.5
+
+    data.mongodb
+      IP      : 172.18.0.6
+
+    data.mysql
+      IP      : 172.18.0.7
+      User<span class="o">(</span>s<span class="o">)</span> :
+        root - MvquBdnJkv
+        nanobox - 12oK9JHiyT
+
+    data.postgres
+      IP      : 172.18.0.8
+      User<span class="o">(</span>s<span class="o">)</span> :
+        nanobox - ohhtrUaMEu
+
+    data.redis
+      IP      : 172.18.0.37
+
+    Environment Variables
+      DATA_BEANSTALKD_HOST <span class="o">=</span> 172.18.0.4
+      DATA_MEMCACHED_HOST <span class="o">=</span> 172.18.0.5
+      DATA_MONGODB_HOST <span class="o">=</span> 172.18.0.6
+      DATA_MYSQL_ROOT_PASS <span class="o">=</span> MvquBdnJkv
+      DATA_POSTGRES_USER <span class="o">=</span> nanobox
+      DATA_POSTGRES_PASS <span class="o">=</span> ohhtrUaMEu
+      DATA_POSTGRES_USERS <span class="o">=</span> nanobox
+      DATA_REDIS_HOST <span class="o">=</span> 172.18.0.37
+      APP_NAME <span class="o">=</span> dev
+      DATA_MYSQL_NANOBOX_PASS <span class="o">=</span> 12oK9JHiyT
+      DATA_MYSQL_PASS <span class="o">=</span> 12oK9JHiyT
+      DATA_MYSQL_USERS <span class="o">=</span> root nanobox
+      DATA_POSTGRES_HOST <span class="o">=</span> 172.18.0.8
+      DATA_POSTGRES_NANOBOX_PASS <span class="o">=</span> ohhtrUaMEu
+      DATA_MYSQL_HOST <span class="o">=</span> 172.18.0.7
+      DATA_MYSQL_USER <span class="o">=</span> nanobox
+
+    DNS Aliases
+      none
+    </code></pre></div></div>
+
+    <p>You can use these variables to connect to your databases or other services such as Mongo, Redis etc.</p>
+
+    <h3 id="developing">Developing</h3>
+    <p>You can now open your favorite editor and start developing in Zephir. You can create new functionality, fix issues, write tests etc. Remember though that if you change any of the <code class="highlighter-rouge">zep</code> files (inside the <code class="highlighter-rouge">phalcon</code> folder), you will need to recompile the extension:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zephir fullclean
+    zephir build
+    </code></pre></div></div>
+    <p>and then you can run your tests</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>codecept run tests/unit/somefolder/somecestfile:sometest
+    </code></pre></div></div>
+
+    <p>For Zephir documentation, you can visit the <a href="https://docs.zephir-lang.com">Zephir Docs</a> site.</p>
+
+    <h3 id="services">Services</h3>
+    <p>The available services are:</p>
+    <ul>
+      <li>Beanstalkd</li>
+      <li>Memcached</li>
+      <li>Mongodb</li>
+      <li>Mysql</li>
+      <li>Postgresql</li>
+      <li>Redis</li>
+    </ul>
+
+    <p>The PHP extensions enabled are:</p>
+    <ul>
+      <li>apcu</li>
+      <li>ctype</li>
+      <li>curl</li>
+      <li>dom</li>
+      <li>fileinfo</li>
+      <li>gd</li>
+      <li>gmp</li>
+      <li>gettext</li>
+      <li>imagick</li>
+      <li>iconv</li>
+      <li>igbinary</li>
+      <li>json</li>
+      <li>memcached</li>
+      <li>mbstring</li>
+      <li>mongodb</li>
+      <li>opcache</li>
+      <li>phar</li>
+      <li>pdo</li>
+      <li>pdo_mysql</li>
+      <li>pdo_pgsql</li>
+      <li>pdo_sqlite</li>
+      <li>redis</li>
+      <li>session</li>
+      <li>simplexml</li>
+      <li>tokenizer</li>
+      <li>yaml</li>
+      <li>zephir_parser</li>
+      <li>xdebug</li>
+      <li>xml</li>
+      <li>xmlwriter</li>
+      <li>zip</li>
+      <li>zlib</li>
+    </ul>
+
+    <p>The database dumps are located under <code class="highlighter-rouge">tests/_data/assets/db/schemas</code></p>
+
+    <p>If you have any questions, feel free to join us in our <a href="https://phalcon.link/discord">Discord</a> server or our <a href="https://forum.phalconphp.com">Forum</a>.</p>
+
+    <p>&lt;3 Phalcon Team</p>
+
+                        <div id="commento" class="commento-root"><div id="commento-login-box-container"></div><div id="commento-error" class="commento-error-box" style="display: none;"></div><div id="commento-main-area" class="commento-main-area" style="display: none"></div></div>
+                    </div>
+        </div>
+      </div>
+    </div>
+  </main>
+	<footer class="footer">
+	<div class="container">
+		<nav>
+			<ul class="footer-nav">
+				<li>
+					<a href="#">Documentation</a>
+				</li>
+				<li>
+					<a href="#">Ecosystem</a>
+				</li>
+				<li>
+					<a href="#">Sponsors</a>
+				</li>
+				<li>
+					<a href="#">Sponsors</a>
+				</li>
+				<li>
+					<a href="#">Blog</a>
+				</li>
+				<li>
+					<a href="#">Team</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="footer__license">
+			Phalcon is an open-source PHP framework  built as a C-extension.
+			<br>
+			It is available under the  new BSD License.
+		</div>
+
+		<div class="footer__supported">
+			<span>Supported By</span>
+
+			<a href="#" class="footer__supported-logo">
+				<svg width="38" height="31" viewBox="0 0 38 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15.375 29.3529C22.9283 29.3529 29.0514 23.2298 29.0514 15.6765C29.0514 8.12317 22.9283 2 15.375 2C7.82165 2 1.69849 8.12317 1.69849 15.6765C1.69849 23.2298 7.82165 29.3529 15.375 29.3529Z" stroke="#273646" stroke-opacity="0.7" stroke-width="3"/>
+					<path d="M33.9044 23.6177H32.1397V30.6765H33.9044V23.6177Z" fill="#273646" fill-opacity="0.7"/>
+					<path d="M37.4338 23.6177H35.6691V30.6765H37.4338V23.6177Z" fill="#273646" fill-opacity="0.7"/>
+				</svg>
+			</a>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
+

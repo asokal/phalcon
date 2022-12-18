@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/main.min.js"></script>
+<title>Phalcon</title>
+</head>
+<body>
+  <header class="header">
+	<div class="container">
+		<div class="header__left">
+			<button class="header-nav__burger" onclick="o2.header.openMobileNav(this);">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+
+			<div class="header__logo">
+				<a href="#"></a>
+
+				<div class="header__sitename">Framework</div>
+			</div>
+
+
+			<ul class="header-nav">
+				<li class="active">
+					<a href="#">
+						Discussions
+				</li>
+
+				<li>
+					<a href="#">
+						Activity
+					</a>
+				</li>
+
+				<li class="expand">
+					<a href="#">
+						Categories
+					</a>
+
+					<div class="header-dropdown-wrapper">
+						<ul class="header-dropdown header-dropdown--cat">
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="#">
+									Beginners
+								</a>
+
+								<a href="#">
+									<div class="header-dropdown__count">328</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="expand">
+					<a href="#">
+						Ecosystem
+					</a>
+
+					<div class="header-dropdown-wrapper">
+						<ul class="header-dropdown header-dropdown--eco">
+							<li class="header-dropdown__title">News</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Twitter</a>
+									</li>
+
+									<li>
+										<a href="#">Facebook</a>
+									</li>
+
+									<li>
+										<a href="#">Blog</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="header-dropdown__title">Help</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Forum</a>
+									</li>
+
+									<li>
+										<a href="#">Discord</a>
+									</li>
+
+									<li>
+										<a href="#">Meeputs</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+
+			<nav class="header-nav--mobile _navToggle" onclick="event.stopPropagation();">
+				<input type="text" class="header__search" placeholder="Search...">
+				<ul>
+					<li>
+						<a href="#">Download</a>
+					</li>
+					<li>
+						<a href="#">Documentation</a>
+					</li>
+					<li class="extendable extended">
+						<a href="#">Ecosystem</a>
+
+						<ul class="header-dropdown--mobile">
+							<li class="header-dropdown--mobile__title">News</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Twitter</a>
+									</li>
+
+									<li>
+										<a href="#">Facebook</a>
+									</li>
+
+									<li>
+										<a href="#">Blog</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="header-dropdown--mobile__title">Help</li>
+
+							<li>
+								<ul>
+									<li>
+										<a href="#">Forum</a>
+									</li>
+
+									<li>
+										<a href="#">Discord</a>
+									</li>
+
+									<li>
+										<a href="#">Meeputs</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+
+					<li class="extendable extended">
+						<a href="#">
+							<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+							English
+						</a>
+						<ul class="header-dropdown--mobile header-dropdown--mobile-lang">
+							<li>
+								<a href="/cs-cz">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/106fae2ab93e1951f2125508f6ac6e08312f04f7/cs-cz.png" alt="Český">
+									Český
+								</a>
+							</li>
+							<li>
+								<a href="/de-de">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9d091161f3383cae8f26f3f8ef37938619e9484e/de-de.png" alt="Deutsch">
+									Deutsch
+								</a>
+							</li>
+							<li>
+								<a href="/el-gr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/cfbaefa507cd599b34109fd7c4b977c413d31f51/el-gr.png" alt="Ελληνικά">
+									Ελληνικά
+								</a>
+							</li>
+							<li>
+								<a href="/en-us">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+									English
+								</a>
+							</li>
+							<li>
+								<a href="/es-es">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/6e027e3c4dd6c445d327c3d21627c29e2cf67496/es-es.png" alt="Spanish">
+									Spanish
+								</a>
+							</li>
+							<li>
+								<a href="/fa-ir">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/ce62f31ca0885abfd85f8819090aaed94428e3d1/fa-ir.png" alt="Persian">
+									Persian
+								</a>
+							</li>
+							<li>
+								<a href="/fr-fr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7c38f7c5a94eef016859bc30d6daeb4cf2a3f883/fr-fr.png" alt="Française">
+									Française
+								</a>
+							</li>
+							<li>
+								<a href="/hu-hu">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d8190214169e4166df000d4f1972e78179bde96b/hu-hu.png" alt="Hungarian">
+									Hungarian
+								</a>
+							</li>
+							<li>
+								<a href="/id-id">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/c39ba9545bd55927dc43adf829dcbf22a1e0b7b4/id-id.png" alt="Indonesian">
+									Indonesian
+								</a>
+							</li>
+							<li>
+								<a href="/ja-jp">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2af3a51934e5cfd3a3a8fb32d56a733dfcd1045d/ja-jp.png" alt="Japanese">
+									Japanese
+								</a>
+							</li>
+							<li>
+								<a href="/ka-ge">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/bfa049f7fe40592ccfa4fae6c49d2c4bf2bff7ea/cb33f/assets/images/flags/ka-ge.png" alt="English">
+									English
+								</a>
+							</li>
+							<li>
+								<a href="/ko-kr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/f21f8d54b37715bfa217c493e6184941ad1a6ec6/ko-kr.png" alt="Korean">
+									Korean
+								</a>
+							</li>
+							<li>
+								<a href="/lv-lv">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/5b8003e3ac8a686c5f5ec2ec9c5cbabc19196601/lv-lv.png" alt="Latviski">
+									Latviski
+								</a>
+							</li>
+							<li>
+								<a href="/pt-br">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/2c878c62b2d4c38f088185da48f93019d0fcf825/6d981/assets/images/flags/pt-br.png" alt="Português (Brazil)">
+									Português (Brazil)
+								</a>
+							</li>
+							<li>
+								<a href="/ro-ro">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d9f5375b28fa82b6865408de568aba7515705806/ro-ro.png" alt="Română">
+									Română
+								</a>
+							</li>
+							<li>
+								<a href="/ru-ru">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/13dfbab8513aee8db39b2ffe5b1d90f0f941a028/ru-ru.png" alt="Pусский">
+									Pусский
+								</a>
+							</li>
+							<li>
+								<a href="/tr-tr">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2d7ef3df68c4e17eee8e63587f1b7542f9842cb3/tr-tr.png" alt="Türkçe">
+									Türkçe
+								</a>
+							</li>
+							<li>
+								<a href="/uk-ua">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7ce4aca8e1b282211d4805c8768ae599dd18b397/uk-ua.png" alt="Ukranian">
+									Ukranian
+								</a>
+							</li>
+							<li>
+								<a href="/zh-cn">
+									<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2b65fd5d1a8a8b24ae022f2db7f68127326039c6/zh-cn.png" alt="简体中文">
+									简体中文
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="header__right">
+			<div class="header__lang expand">
+				<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+
+				<div class="header-dropdown-wrapper">
+					<ul class="header-dropdown header-dropdown--lang">
+						<li>
+							<a href="/cs-cz">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/106fae2ab93e1951f2125508f6ac6e08312f04f7/cs-cz.png" alt="Český">
+								Český
+							</a>
+						</li>
+						<li>
+							<a href="/de-de">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9d091161f3383cae8f26f3f8ef37938619e9484e/de-de.png" alt="Deutsch">
+								Deutsch
+							</a>
+						</li>
+						<li>
+							<a href="/el-gr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/cfbaefa507cd599b34109fd7c4b977c413d31f51/el-gr.png" alt="Ελληνικά">
+								Ελληνικά
+							</a>
+						</li>
+						<li>
+							<a href="/en-us">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/9f1b6c2e259533d1144abd9f127a1e5bce09e8ca/en-us.png" alt="English">
+								English
+							</a>
+						</li>
+						<li>
+							<a href="/es-es">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/6e027e3c4dd6c445d327c3d21627c29e2cf67496/es-es.png" alt="Spanish">
+								Spanish
+							</a>
+						</li>
+						<li>
+							<a href="/fa-ir">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/ce62f31ca0885abfd85f8819090aaed94428e3d1/fa-ir.png" alt="Persian">
+								Persian
+							</a>
+						</li>
+						<li>
+							<a href="/fr-fr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7c38f7c5a94eef016859bc30d6daeb4cf2a3f883/fr-fr.png" alt="Française">
+								Française
+							</a>
+						</li>
+						<li>
+							<a href="/hu-hu">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d8190214169e4166df000d4f1972e78179bde96b/hu-hu.png" alt="Hungarian">
+								Hungarian
+							</a>
+						</li>
+						<li>
+							<a href="/id-id">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/c39ba9545bd55927dc43adf829dcbf22a1e0b7b4/id-id.png" alt="Indonesian">
+								Indonesian
+							</a>
+						</li>
+						<li>
+							<a href="/ja-jp">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2af3a51934e5cfd3a3a8fb32d56a733dfcd1045d/ja-jp.png" alt="Japanese">
+								Japanese
+							</a>
+						</li>
+						<li>
+							<a href="/ka-ge">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/bfa049f7fe40592ccfa4fae6c49d2c4bf2bff7ea/cb33f/assets/images/flags/ka-ge.png" alt="English">
+								English
+							</a>
+						</li>
+						<li>
+							<a href="/ko-kr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/f21f8d54b37715bfa217c493e6184941ad1a6ec6/ko-kr.png" alt="Korean">
+								Korean
+							</a>
+						</li>
+						<li>
+							<a href="/lv-lv">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/5b8003e3ac8a686c5f5ec2ec9c5cbabc19196601/lv-lv.png" alt="Latviski">
+								Latviski
+							</a>
+						</li>
+						<li>
+							<a href="/pt-br">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/2c878c62b2d4c38f088185da48f93019d0fcf825/6d981/assets/images/flags/pt-br.png" alt="Português (Brazil)">
+								Português (Brazil)
+							</a>
+						</li>
+						<li>
+							<a href="/ro-ro">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/d9f5375b28fa82b6865408de568aba7515705806/ro-ro.png" alt="Română">
+								Română
+							</a>
+						</li>
+						<li>
+							<a href="/ru-ru">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/13dfbab8513aee8db39b2ffe5b1d90f0f941a028/ru-ru.png" alt="Pусский">
+								Pусский
+							</a>
+						</li>
+						<li>
+							<a href="/tr-tr">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2d7ef3df68c4e17eee8e63587f1b7542f9842cb3/tr-tr.png" alt="Türkçe">
+								Türkçe
+							</a>
+						</li>
+						<li>
+							<a href="/uk-ua">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/7ce4aca8e1b282211d4805c8768ae599dd18b397/uk-ua.png" alt="Ukranian">
+								Ukranian
+							</a>
+						</li>
+						<li>
+							<a href="/zh-cn">
+								<img class="flag-item" src="https://d33wubrfki0l68.cloudfront.net/assets/images/flags/2b65fd5d1a8a8b24ae022f2db7f68127326039c6/zh-cn.png" alt="简体中文">
+								简体中文
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<input type="text" class="header__search" placeholder="Search...">
+			<div class="header__github">
+				<a href="#">
+					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M13.4557 11.4235C12.6752 11.4235 12.0422 12.2987 12.0422 13.3791C12.0422 14.4598 12.6752 15.3354 13.4557 15.3354C14.2357 15.3354 14.8683 14.4598 14.8683 13.3791C14.8685 12.2987 14.2357 11.4235 13.4557 11.4235ZM18.3754 6.33304C18.5363 5.93609 18.5443 3.68065 17.6863 1.52174C17.6863 1.52174 15.7174 1.73761 12.7385 3.78174C12.1141 3.60935 11.0567 3.52304 10 3.52304C8.94326 3.52304 7.8863 3.60913 7.2613 3.78152C4.28239 1.73761 2.31413 1.52174 2.31413 1.52174C1.45587 3.68065 1.46348 5.93609 1.62457 6.33304C0.616087 7.42804 0 8.74304 0 10.5398C0 18.3511 6.48022 18.4763 8.11609 18.4763C8.4863 18.4763 9.22217 18.4772 10 18.4783C10.7778 18.4772 11.5141 18.4763 11.8839 18.4763C13.5198 18.4763 20 18.3511 20 10.5398C20 8.74304 19.3839 7.42804 18.3754 6.33304ZM10.0307 17.5161H9.96957C5.86978 17.5161 2.67717 17.0265 2.67717 13.0422C2.67717 12.088 3.01391 11.202 3.81391 10.4667C5.14891 9.24152 7.40674 9.89044 9.96957 9.89044C9.97935 9.89044 9.98978 9.89022 10.0002 9.88978C10.0109 9.89022 10.0211 9.89044 10.0309 9.89044C12.5937 9.89044 14.8522 9.24174 16.1865 10.4667C16.9865 11.202 17.3233 12.088 17.3233 13.0422C17.323 17.0265 14.1304 17.5161 10.0307 17.5161ZM6.54435 11.4235C5.76435 11.4235 5.13174 12.2987 5.13174 13.3791C5.13174 14.4598 5.76435 15.3354 6.54435 15.3354C7.32522 15.3354 7.95783 14.4598 7.95783 13.3791C7.95761 12.2987 7.325 11.4235 6.54435 11.4235Z" fill="white"/>
+					</svg>
+				</a>
+			</div>
+			<div class="header__discord">
+				<a href="#">
+					<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 245 240">
+						<style>.st0{fill:#FFFFFF;}</style>
+						<path class="st0" d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"/>
+						<path class="st0" d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+  <main class="wrapper">
+	<h1 class="hidden-accessible">
+		Documentation
+	</h1>
+    <div class="phalcon-blog phalcon-blog_documentation">
+      <div class="doc-article-nav-wr">
+        <div class="doc-article-nav-items">
+          <div class="doc-article-nav-markers"></div>
+          <div class="doc-article-nav-list">
+            <div href="#" class="doc-article-nav-list-label">
+              RUBRICS
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="phalcon-blog__main">
+          <div class="phalcon-blog-detail phalcon-blog-detail_documetation">
+            <h1 itemprop="name headline" class="headline">
+              Lorem ipsum
+            </h1>
+            <div class="phalcon-blog-detail__info">
+              <div class="phalcon-blog-detail__date">
+                Dec 23, 2018
+              </div>
+              <div class="phalcon-blog-detail__author">Phalcon Team</div>
+            </div>
+
+
+            <div class="doc-article-top-nav">
+              <ul class="doc-article-top-nav__list">
+                <li>
+                  <a href="#header-0">
+                   Requirements
+                  </a>
+                  <ul class="doc-article-top-nav__list doc-article-top-nav__list_sub">
+                    <li>
+                      <a href="#optional-depending-on-the-needs-of-your-application">Optional depending on the needs of your application</a>
+                    </li>
+                  </ul>
+
+                  <li>
+                    <a href="#nginx">nginx</a>
+
+                    <ul class="doc-article-top-nav__list doc-article-top-nav__list_sub">
+                      <li>
+                        <a href="#install-nginx">Install nginx</a>
+                      </li>
+
+                      <li>
+                        <a href="#phalcon-configuration">Phalcon Configuration</a>
+                      </li>
+
+                      <li>
+                        <a href="#start">Start</a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#php-fpm">PHP-FPM</a>
+                  </li>
+
+                  <li>
+                    <a href="#php-fpm">PHP-FPM</a>
+                  </li>
+
+                  <li>
+                    <a href="#php-fpm">PHP-FPM</a>
+                  </li>
+                </li>
+              </ul>
+            </div>
+
+            <h1 id="requirements">Requirements</h1>
+    <p>Phalcon needs PHP to run. Its loosely coupled design allows developers to install Phalcon and use its functionality without additional extensions. Certain components have dependencies to other extensions. For instance using database connectivity will require the <code class="highlighter-rouge">php_pdo</code> extension. If your RDBMS is MySql/MariaDb or Aurora databases you will need the <code class="highlighter-rouge">php_mysqlnd</code> extension also. Similarly, using a PostgreSql database with Phalcon requires the <code class="highlighter-rouge">php_pgsql</code> extension.</p>
+
+    <p><a name="requirements-hardware"></a></p>
+    <h2 id="hardware">Hardware</h2>
+    <p>Phalcon is designed to use as little resources as possible, while offering high performance. Although we have tested Phalcon in various low end environments, (such as 0.25GB RAM, 0.5 CPU), the hardware that you will choose will depend on the your application needs.</p>
+
+    <p>Our website and blog (as well as other sites) are hosted on an Amazon VM with 512MB RAM and 1 vCPU.</p>
+
+    <p><a name="requirements-software"></a></p>
+    <h2 id="software">Software</h2>
+    <ul>
+      <li>PHP &gt;= 5.5</li>
+    </ul>
+
+    <h5 class="alert alert-danger">You should always try and use the latest version of Phalcon and PHP as both address bugs, security enhancements as well as performance. PHP 5.5 will be deprecated in the near future, and Phalcon 4 will only support PHP 7 </h5>
+
+    <p>Phalcon need the following extensions to run (minimal):</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">curl</code></li>
+      <li><code class="highlighter-rouge">gettext</code></li>
+      <li><code class="highlighter-rouge">gd2</code> (to use the <code class="highlighter-rouge">Phalcon\Image\Adapter\Gd</code> class)</li>
+      <li><code class="highlighter-rouge">libpcre3-dev</code> (Debian/Ubuntu), <code class="highlighter-rouge">pcre-devel</code> (CentOS), <code class="highlighter-rouge">pcre</code> (macOS)</li>
+      <li><code class="highlighter-rouge">json</code></li>
+      <li><code class="highlighter-rouge">mbstring</code></li>
+      <li><code class="highlighter-rouge">pdo_*</code></li>
+      <li><code class="highlighter-rouge">fileinfo</code></li>
+      <li><code class="highlighter-rouge">openssl</code></li>
+    </ul>
+
+    <p><a name="requirements-software-optional"></a></p>
+    <h3 id="optional-depending-on-the-needs-of-your-application">Optional depending on the needs of your application</h3>
+    <ul>
+      <li><a href="http://php.net/manual/en/book.pdo.php">PDO</a> Extension as well as the relevant RDBMS specific extension (i.e. <a href="http://php.net/manual/en/ref.pdo-mysql.php">MySQL</a>, <a href="http://php.net/manual/en/ref.pdo-pgsql.php">PostgreSql</a> etc.)</li>
+      <li><a href="http://php.net/manual/en/book.openssl.php">OpenSSL</a> Extension</li>
+      <li><a href="http://php.net/manual/en/book.mbstring.php">Mbstring</a> Extension</li>
+      <li><a href="http://php.net/manual/en/book.memcache.php">Memcache</a>, <a href="http://php.net/manual/en/book.memcached.php">Memcached</a> or other relevant cache adapters depending on your usage of cache</li>
+    </ul>
+
+    <p><a name="installation"></a></p>
+    <h1 id="installation">Installation</h1>
+    <p>Since Phalcon is compiled as a PHP extension, its installation is somewhat different than any other traditional PHP framework. Phalcon needs to be installed and loaded as a module on your web server.</p>
+
+    <p><a name="installation-linux"></a></p>
+    <h2 id="linux">Linux</h2>
+    <p>To install Phalcon on Linux, you will need to add our repository in your distribution and then install it.</p>
+
+    <p><a name="installation-linux-debian"></a></p>
+    <h3 id="deb-based-distributions-debian-ubuntu-etc">DEB based distributions (Debian, Ubuntu, etc.)</h3>
+    <p><a name="installation-linux-debian-repository"></a></p>
+    <h4 id="repository-installation">Repository installation</h4>
+    <p>Add the repository to your distribution:</p>
+
+    <p><a name="installation-linux-debian-repository-stable"></a></p>
+    <h5 id="stable-releases">Stable releases</h5>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-s</span> https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | <span class="nb">sudo </span>bash
+    </code></pre></div></div>
+
+    <p>or</p>
+
+    <p><a name="installation-linux-debian-repository-nightly"></a></p>
+    <h5 id="nightly-releases">Nightly releases</h5>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-s</span> https://packagecloud.io/install/repositories/phalcon/nightly/script.deb.sh | <span class="nb">sudo </span>bash
+    </code></pre></div></div>
+
+    <h5 class="alert alert-warning">This only needs to be done only once, unless your distribution changes or you want to switch from stable to nightly builds. </h5>
+
+    <p><a name="installation-linux-debian-phalcon"></a></p>
+    <h4 id="phalcon-installation">Phalcon installation</h4>
+    <p>To install Phalcon you need to issue the following commands in your terminal:</p>
+
+    <p><a name="installation-linux-debian-phalcon-php5"></a></p>
+    <h5 id="php-5x">PHP 5.x</h5>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+    <span class="nb">sudo </span>apt-get <span class="nb">install </span>php5-phalcon
+    </code></pre></div></div>
+
+    <p><a name="installation-linux-debian-phalcon-php7"></a></p>
+    <h5 id="php-7">PHP 7</h5>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+    <span class="nb">sudo </span>apt-get <span class="nb">install </span>php7.0-phalcon
+    </code></pre></div></div>
+
+    <p><a name="installation-linux-debian-other-ppa"></a></p>
+    <h4 id="additional-ppas">Additional PPAs</h4>
+    <h4 id="ondřej-surý">Ondřej Surý</h4>
+    <p>If you do not wish to use our repository at <a href="https://packagecloud.io/phalcon">packagecloud.io</a>, you can always use the one offered by <a href="https://launchpad.net/~ondrej/+archive/ubuntu/php/">Ondřej Surý</a>.</p>
+
+    <p>Installation of the repo:</p>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sudo</span> <span class="nx">add</span><span class="o">-</span><span class="nx">apt</span><span class="o">-</span><span class="nx">repository</span> <span class="nx">ppa</span><span class="o">:</span><span class="nx">ondrej</span><span class="o">/</span><span class="nx">php</span>
+    <span class="nx">sudo</span> <span class="nx">apt</span><span class="o">-</span><span class="nx">get</span> <span class="nx">update</span>
+    </code></pre></div></div>
+
+    <p>and Phalcon:</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sudo</span> <span class="nx">apt</span><span class="o">-</span><span class="nx">get</span> <span class="nx">install</span> <span class="nx">php</span><span class="o">-</span><span class="nx">phalcon</span>
+    </code></pre></div></div>
+
+    <p><a name="installation-linux-rpm"></a></p>
+    <h3 id="rpm-based-distributions-centos-fedora-etc">RPM based distributions (CentOS, Fedora, etc.)</h3>
+    <p><a name="installation-linux-rpm-repository"></a></p>
+    <h4 id="repository-installation-1">Repository installation</h4>
+    <p>Add the repository to your distribution:</p>
+
+    <p><a name="installation-linux-rpm-repository-stable"></a></p>
+    <h5 id="stable-releases-1">Stable releases</h5>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-s</span> https://packagecloud.io/install/repositories/phalcon/stable/script.rpm.sh | <span class="nb">sudo </span>bash
+    </code></pre></div></div>
+
+    <p>or</p>
+    <p><a name="installation-linux-rpm-repository-nightly"></a></p>
+    <h5 id="nightly-releases-1">Nightly releases</h5>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-s</span> https://packagecloud.io/install/repositories/phalcon/nightly/script.rpm.sh | <span class="nb">sudo </span>bash
+    </code></pre></div></div>
+
+    <h5 class="alert alert-warning">This only needs to be done only once, unless your distribution changes or you want to switch from stable to nightly builds. </h5>
+
+    <p><a name="installation-linux-rpm-phalcon"></a></p>
+    <h4 id="phalcon-installation-1">Phalcon installation</h4>
+    <p>To install Phalcon you need to issue the following commands in your terminal:</p>
+
+    <p><a name="installation-linux-rpm-phalcon-php5"></a></p>
+    <h5 id="php-5x-1">PHP 5.x</h5>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum update
+    <span class="nb">sudo </span>yum <span class="nb">install </span>php56u-phalcon
+    </code></pre></div></div>
+
+    <p><a name="installation-linux-rpm-phalcon-php7"></a></p>
+    <h5 id="php-7-1">PHP 7</h5>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum update
+    <span class="nb">sudo </span>yum <span class="nb">install </span>php70u-phalcon
+    </code></pre></div></div>
+
+    <p><a name="installation-linux-rpm-other-rpm"></a></p>
+    <h4 id="additional-rpms">Additional RPMs</h4>
+    <h5 id="remi">Remi</h5>
+    <p><a href="https://github.com/remicollet">Remi Collet</a> maintains an excellent repository for RPM based installations. You can find instructions on how to enable it for your distribution <a href="https://blog.remirepo.net/pages/Config-en">here</a>.</p>
+
+    <p>Installing Phalcon after that is as easy as:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum <span class="nb">install </span>php56-php-phalcon3
+    </code></pre></div></div>
+
+    <p>Additional versions are available both architecture specific (x86/x64) as well as PHP specific (5.5, 5.6, 7.x)</p>
+
+    <p><a name="installation-freebsd"></a></p>
+    <h2 id="freebsd">FreeBSD</h2>
+    <p>A port is available for FreeBSD. To install it you will need to issue the following commands:</p>
+    <h3 id="pkg_add"><code class="highlighter-rouge">pkg_add</code></h3>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pkg_add <span class="nt">-r</span> phalcon
+    </code></pre></div></div>
+
+    <h3 id="source">Source</h3>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">"-O2 --fvisibility=hidden"</span>
+
+    <span class="nb">cd</span> /usr/ports/www/phalcon
+
+    make <span class="nb">install </span>clean
+    </code></pre></div></div>
+
+    <p><a name="installation-gentoo"></a></p>
+    <h2 id="gentoo">Gentoo</h2>
+    <p>An overlay for installing Phalcon can be found here <a href="https://github.com/smoke/phalcon-gentoo-overlay">https://github.com/smoke/phalcon-gentoo-overlay</a></p>
+
+    <p><a name="installation-macos"></a></p>
+    <h2 id="macos">macOS</h2>
+    <p>On a macOS system you can compile and install the extension with <code class="highlighter-rouge">brew</code>, <code class="highlighter-rouge">macports</code> or the source code:</p>
+
+    <h3 id="requirements-1">Requirements</h3>
+    <ul>
+      <li>PHP 5.5.x/5.6.x/7.0.x/7.1.x development resources</li>
+      <li>XCode</li>
+    </ul>
+
+    <p><a name="installation-macos-brew"></a></p>
+    <h3 id="brew">Brew</h3>
+
+    <p>As the <a href="https://brew.sh/2018/01/19/homebrew-1.5.0/">homebrew/php tap has been deprecated</a> and is in the process of being removed, A custom repository for Phalcon has been created.</p>
+
+    <p>PHP 5.5 has not been ported to homebrew/core and as such no longer exists. PHP 7.2 on the other hand has been added.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew tap tigerstrikemedia/homebrew-phalconphp
+    brew <span class="nb">install </span>php56-phalcon
+    brew <span class="nb">install </span>php70-phalcon
+    brew <span class="nb">install </span>php71-phalcon
+    brew <span class="nb">install </span>php72-phalcon
+    </code></pre></div></div>
+
+    <p><a name="installation-macos-macports"></a></p>
+    <h3 id="macports">MacPorts</h3>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>port <span class="nb">install </span>php55-phalcon
+    <span class="nb">sudo </span>port <span class="nb">install </span>php56-phalcon
+    </code></pre></div></div>
+
+    <p>Edit your php.ini file and then append at the end:</p>
+
+    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">extension</span><span class="p">=</span><span class="s">php_phalcon.so</span>
+    </code></pre></div></div>
+
+    <p>Restart your webserver.</p>
+
+    <p><a name="installation-windows"></a></p>
+    <h2 id="windows">Windows</h2>
+    <p>To use Phalcon on Windows, you will need to install the phalcon.dll. We have compiled several DLLs depending on the target platform. The DLLs can be found in our <a href="https://phalconphp.com/en/download/windows">download</a> page.</p>
+
+    <p>Identify your PHP installation as well as architecture. If you download the wrong DLL, Phalcon will not work. <code class="highlighter-rouge">phpinfo()</code> contains this information. In the example below, we will need the NTS version of the DLL:</p>
+
+    <p><img src="https://d33wubrfki0l68.cloudfront.net/1fbafd76d0e4d03cff853ff184fe9f0bbcfab1c1/df862/assets/images/content/phpinfo-api.png" alt="phpinfo" /></p>
+
+    <p>The available DLLs are:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">Architecture</th>
+          <th style="text-align: center">Version</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">x64</td>
+          <td style="text-align: center">7.x</td>
+          <td>Thread safe</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">x64</td>
+          <td style="text-align: center">7.x</td>
+          <td>Non Thread safe (NTS)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">x86</td>
+          <td style="text-align: center">7.x</td>
+          <td>Thread safe</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">x86</td>
+          <td style="text-align: center">7.x</td>
+          <td>Non Thread safe (NTS)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">x64</td>
+          <td style="text-align: center">5.6</td>
+          <td>Thread safe</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">x64</td>
+          <td style="text-align: center">5.6</td>
+          <td>Non Thread safe (NTS)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">x86</td>
+          <td style="text-align: center">5.6</td>
+          <td>Thread safe</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">x86</td>
+          <td style="text-align: center">5.6</td>
+          <td>Non Thread safe (NTS)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">x64</td>
+          <td style="text-align: center">5.5</td>
+          <td>Thread safe</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">x64</td>
+          <td style="text-align: center">5.5</td>
+          <td>Non Thread safe (NTS)</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">x86</td>
+          <td style="text-align: center">5.5</td>
+          <td>Thread safe</td>
+        </tr>
+        <tr>
+          <td style="text-align: center">x86</td>
+          <td style="text-align: center">5.5</td>
+          <td>Non Thread safe (NTS)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Edit your php.ini file and then append at the end:</p>
+
+    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">extension</span><span class="p">=</span><span class="s">php_phalcon.dll</span>
+    </code></pre></div></div>
+
+    <p>Restart your webserver.</p>
+
+    <p><a name="installation-sources"></a></p>
+    <h2 id="compile-from-sources">Compile from Sources</h2>
+    <p>Compiling from source is similar to most environments (Linux/macOS).</p>
+
+    <h3 id="requirements-2">Requirements</h3>
+    <ul>
+      <li>PHP 5.5.x/5.6.x/7.0.x/7.1.x development resources</li>
+      <li>GCC compiler (Linux/Solaris/FreeBSD) or Xcode (macOS)</li>
+      <li>re2c &gt;= 0.13</li>
+      <li>libpcre-dev</li>
+    </ul>
+
+    <p>You can install these packages in your system with the relevant package manager. Instructions for popular linux distributions are below:</p>
+
+    <h4 id="ubuntu">Ubuntu</h4>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>php5-dev libpcre3-dev gcc make
+    </code></pre></div></div>
+
+    <h4 id="suse">Suse</h4>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>zypper <span class="nb">install </span>php5-devel gcc make
+    </code></pre></div></div>
+
+    <h4 id="centosfedorarhel">CentOS/Fedora/RHEL</h4>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>yum <span class="nb">install </span>php-devel pcre-devel gcc make
+    </code></pre></div></div>
+
+    <h3 id="compile-phalcon">Compile Phalcon</h3>
+    <p>We first need to clone Phalcon from the Github repository</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/phalcon/cphalcon
+    </code></pre></div></div>
+
+    <p>and now build the extension</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>cphalcon/build
+    <span class="nb">sudo</span> ./install
+    </code></pre></div></div>
+
+    <p>You will now need to add <code class="highlighter-rouge">extension=phalcon.so</code> to your PHP ini and restart your web server, so as to load the extension.</p>
+    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Suse: Add a file called phalcon.ini in /etc/php5/conf.d/ with this content:
+    </span><span class="py">extension</span><span class="p">=</span><span class="s">phalcon.so</span>
+
+    <span class="c"># CentOS/RedHat/Fedora: Add a file called phalcon.ini in /etc/php.d/ with this content:
+    </span><span class="py">extension</span><span class="p">=</span><span class="s">phalcon.so</span>
+
+    <span class="c"># Ubuntu/Debian with apache2: Add a file called 30-phalcon.ini in /etc/php5/apache2/conf.d/ with this content:
+    </span><span class="py">extension</span><span class="p">=</span><span class="s">phalcon.so</span>
+
+    <span class="c"># Ubuntu/Debian with php5-fpm: Add a file called 30-phalcon.ini in /etc/php5/fpm/conf.d/ with this content:
+    </span><span class="py">extension</span><span class="p">=</span><span class="s">phalcon.so</span>
+
+    <span class="c"># Ubuntu/Debian with php5-cli: Add a file called 30-phalcon.ini in /etc/php5/cli/conf.d/ with this content:
+    </span><span class="py">extension</span><span class="p">=</span><span class="s">phalcon.so</span>
+    </code></pre></div></div>
+
+    <p><a name="installation-sources-advanced"></a></p>
+    <h2 id="advanced-compilation">Advanced Compilation</h2>
+    <p>Phalcon automatically detects your architecture, however, you can force the compilation for a specific architecture:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>cphalcon/build
+
+    <span class="c"># One of the following:</span>
+    <span class="nb">sudo</span> ./install <span class="nt">--arch</span> 32bits
+    <span class="nb">sudo</span> ./install <span class="nt">--arch</span> 64bits
+    <span class="nb">sudo</span> ./install <span class="nt">--arch</span> safe
+    </code></pre></div></div>
+
+    <p>If the automatic installer fails you can build the extension manually:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/phalcon/cphalcon
+    <span class="c"># cd cphalcon/build/php5/32bits</span>
+    <span class="nb">cd </span>cphalcon/build/php5/64bits
+
+    <span class="c"># NOTE: for PHP 7 you have to use</span>
+    <span class="c"># cd cphalcon/build/php7/32bits</span>
+    <span class="c"># or</span>
+    <span class="c"># cd cphalcon/build/php7/64bits</span>
+
+    make clean
+    phpize <span class="nt">--clean</span>
+
+    <span class="nb">export </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">"-O2 --fvisibility=hidden"</span>
+    ./configure <span class="nt">--enable-phalcon</span>
+
+    make
+    make <span class="nb">install</span>
+    </code></pre></div></div>
+
+    <p>If you have specific php versions running:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/phalcon/cphalcon
+    <span class="c"># cd cphalcon/build/php5/32bits</span>
+    <span class="nb">cd </span>cphalcon/build/php5/64bits
+
+    <span class="c"># NOTE: for PHP 7 you have to use</span>
+    <span class="c"># cd cphalcon/build/php7/32bits</span>
+    <span class="c"># or</span>
+    <span class="c"># cd cphalcon/build/php7/64bits</span>
+
+    make clean
+    /opt/php-5.6.15/bin/phpize <span class="nt">--clean</span>
+
+    <span class="nb">export </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">"-O2 --fvisibility=hidden"</span>
+    ./configure <span class="nt">--with-php-config</span><span class="o">=</span>/opt/php-5.6.15/bin/php-config <span class="nt">--enable-phalcon</span>
+
+    make
+    make <span class="nb">install</span>
+    </code></pre></div></div>
+
+    <p>You will now need to add <code class="highlighter-rouge">extension=phalcon.so</code> to your PHP ini and restart your web server, so as to load the extension.</p>
+
+    <p><a name="installation-testing"></a>
+    You can create a small script in your web server root that has the following in it:</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+    <span class="nb">phpinfo</span><span class="p">();</span>
+    </code></pre></div></div>
+
+    <p>and load it on your web browser. There should be a section for Phalcon. If there is not, make sure that your extension has been compiled properly, that you made the necessary changes to your <code class="highlighter-rouge">php.ini</code> and also that you have restarted your web server.</p>
+
+    <p>You can also check your installation from the command line:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-r</span> <span class="s1">'print_r(get_loaded_extensions());'</span>
+    </code></pre></div></div>
+
+    <p>This will output something similar to this:</p>
+
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Array</span>
+    <span class="p">(</span>
+        <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Core</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">libxml</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">filter</span>
+        <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">SPL</span>
+        <span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">standard</span>
+        <span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">phalcon</span>
+        <span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">pdo_mysql</span>
+    <span class="p">)</span>
+    </code></pre></div></div>
+
+    <p>You can also see the modules installed using the CLI:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-m</span>
+    </code></pre></div></div>
+
+    <h5 class="alert alert-danger">Note that in some Linux based systems, you might need to change two <code class="highlighter-rouge">php.ini</code> files, one for your web server (Apache/Nginx), and one for the CLI. If Phalcon is loaded only for say the web server, you will need to locate the CLI <code class="highlighter-rouge">php.ini</code> and make the necessary additions for the module to be loaded. </h5>
+    </div>
+
+                    <div>
+                        <div id="commento" class="col"></div>
+                    </div>
+        </div>
+
+        <div class="phalcon-blog__right documentation-nav-wr">
+          <div class="phalcon-blog__right-item documentation-nav">
+            <div class="documentation-nav-item">
+              <a href="#" class="documentation-nav-item__label">
+                Lorem ipsum dolor
+              </a>
+            </div>
+            <div class="documentation-nav-item">
+              <a href="javascript:void(0)" onclick="o2.documentation.toggleSublist(this)" class="documentation-nav-item__label">
+                <span class="documentation-nav-item__label-icon">
+                  <svg width="5" height="7" viewBox="0 0 5 7" xmlns="http://www.w3.org/2000/svg" fill="#273646" fill-opacity=".4"><path d="M4.9303 3.3627L.253.0293A.1576.1576 0 0 0 .0863.019.1673.1673 0 0 0 0 .1665v6.6668c0 .062.0332.1189.0863.1477A.1583.1583 0 0 0 .1613 7c.032 0 .064-.01.0916-.0295L4.9303 3.637A.168.168 0 0 0 5 3.4999a.1685.1685 0 0 0-.0697-.1372z"/></svg>
+                </span>
+                Lorem ipsum
+              </a>
+              <div class="documentation-nav-item__sublist">
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Lorem ipsum
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link documentation-nav-item__sublist-link_active">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="documentation-nav-item">
+              <a href="javascript:void(0)" onclick="o2.documentation.toggleSublist(this)" class="documentation-nav-item__label">
+                <span class="documentation-nav-item__label-icon">
+                  <svg width="5" height="7" viewBox="0 0 5 7" xmlns="http://www.w3.org/2000/svg" fill="#273646" fill-opacity=".4"><path d="M4.9303 3.3627L.253.0293A.1576.1576 0 0 0 .0863.019.1673.1673 0 0 0 0 .1665v6.6668c0 .062.0332.1189.0863.1477A.1583.1583 0 0 0 .1613 7c.032 0 .064-.01.0916-.0295L4.9303 3.637A.168.168 0 0 0 5 3.4999a.1685.1685 0 0 0-.0697-.1372z"/></svg>
+                </span>
+                General
+              </a>
+              <div class="documentation-nav-item__sublist">
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="documentation-nav-item">
+              <a href="javascript:void(0)" onclick="o2.documentation.toggleSublist(this)" class="documentation-nav-item__label">
+                <span class="documentation-nav-item__label-icon">
+                  <svg width="5" height="7" viewBox="0 0 5 7" xmlns="http://www.w3.org/2000/svg" fill="#273646" fill-opacity=".4"><path d="M4.9303 3.3627L.253.0293A.1576.1576 0 0 0 .0863.019.1673.1673 0 0 0 0 .1665v6.6668c0 .062.0332.1189.0863.1477A.1583.1583 0 0 0 .1613 7c.032 0 .064-.01.0916-.0295L4.9303 3.637A.168.168 0 0 0 5 3.4999a.1685.1685 0 0 0-.0697-.1372z"/></svg>
+                </span>
+                Contributions
+              </a>
+              <div class="documentation-nav-item__sublist">
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Installation
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    WAMP
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    XAMPP
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="documentation-nav-item">
+              <a href="javascript:void(0)" onclick="o2.documentation.toggleSublist(this)" class="documentation-nav-item__label">
+                <span class="documentation-nav-item__label-icon">
+                  <svg width="5" height="7" viewBox="0 0 5 7" xmlns="http://www.w3.org/2000/svg" fill="#273646" fill-opacity=".4"><path d="M4.9303 3.3627L.253.0293A.1576.1576 0 0 0 .0863.019.1673.1673 0 0 0 0 .1665v6.6668c0 .062.0332.1189.0863.1477A.1583.1583 0 0 0 .1613 7c.032 0 .064-.01.0916-.0295L4.9303 3.637A.168.168 0 0 0 5 3.4999a.1685.1685 0 0 0-.0697-.1372z"/></svg>
+                </span>
+                Environments
+              </a>
+              <div class="documentation-nav-item__sublist">
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="documentation-nav-item">
+              <a href="javascript:void(0)" onclick="o2.documentation.toggleSublist(this)" class="documentation-nav-item__label">
+                <span class="documentation-nav-item__label-icon">
+                  <svg width="5" height="7" viewBox="0 0 5 7" xmlns="http://www.w3.org/2000/svg" fill="#273646" fill-opacity=".4"><path d="M4.9303 3.3627L.253.0293A.1576.1576 0 0 0 .0863.019.1673.1673 0 0 0 0 .1665v6.6668c0 .062.0332.1189.0863.1477A.1583.1583 0 0 0 .1613 7c.032 0 .064-.01.0916-.0295L4.9303 3.637A.168.168 0 0 0 5 3.4999a.1685.1685 0 0 0-.0697-.1372z"/></svg>
+                </span>
+                Services
+              </a>
+              <div class="documentation-nav-item__sublist">
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="documentation-nav-item">
+              <a href="javascript:void(0)" onclick="o2.documentation.toggleSublist(this)" class="documentation-nav-item__label">
+                <span class="documentation-nav-item__label-icon">
+                  <svg width="5" height="7" viewBox="0 0 5 7" xmlns="http://www.w3.org/2000/svg" fill="#273646" fill-opacity=".4"><path d="M4.9303 3.3627L.253.0293A.1576.1576 0 0 0 .0863.019.1673.1673 0 0 0 0 .1665v6.6668c0 .062.0332.1189.0863.1477A.1583.1583 0 0 0 .1613 7c.032 0 .064-.01.0916-.0295L4.9303 3.637A.168.168 0 0 0 5 3.4999a.1685.1685 0 0 0-.0697-.1372z"/></svg>
+                </span>
+                Database
+              </a>
+              <div class="documentation-nav-item__sublist">
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="documentation-nav-item">
+              <a href="javascript:void(0)" onclick="o2.documentation.toggleSublist(this)" class="documentation-nav-item__label">
+                <span class="documentation-nav-item__label-icon">
+                  <svg width="5" height="7" viewBox="0 0 5 7" xmlns="http://www.w3.org/2000/svg" fill="#273646" fill-opacity=".4"><path d="M4.9303 3.3627L.253.0293A.1576.1576 0 0 0 .0863.019.1673.1673 0 0 0 0 .1665v6.6668c0 .062.0332.1189.0863.1477A.1583.1583 0 0 0 .1613 7c.032 0 .064-.01.0916-.0295L4.9303 3.637A.168.168 0 0 0 5 3.4999a.1685.1685 0 0 0-.0697-.1372z"/></svg>
+                </span>
+                Front End
+              </a>
+              <div class="documentation-nav-item__sublist">
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="documentation-nav-item">
+              <a href="javascript:void(0)" onclick="o2.documentation.toggleSublist(this)" class="documentation-nav-item__label">
+                <span class="documentation-nav-item__label-icon">
+                  <svg width="5" height="7" viewBox="0 0 5 7" xmlns="http://www.w3.org/2000/svg" fill="#273646" fill-opacity=".4"><path d="M4.9303 3.3627L.253.0293A.1576.1576 0 0 0 .0863.019.1673.1673 0 0 0 0 .1665v6.6668c0 .062.0332.1189.0863.1477A.1583.1583 0 0 0 .1613 7c.032 0 .064-.01.0916-.0295L4.9303 3.637A.168.168 0 0 0 5 3.4999a.1685.1685 0 0 0-.0697-.1372z"/></svg>
+                </span>
+                Business Logic
+              </a>
+              <div class="documentation-nav-item__sublist">
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+                <div class="documentation-nav-item__sublist-item">
+                  <a href="#" class="documentation-nav-item__sublist-link">
+                    Webserver Setup
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+	<div class="container">
+		<nav>
+			<ul class="footer-nav">
+				<li>
+					<a href="#">Documentation</a>
+				</li>
+				<li>
+					<a href="#">Ecosystem</a>
+				</li>
+				<li>
+					<a href="#">Sponsors</a>
+				</li>
+				<li>
+					<a href="#">Sponsors</a>
+				</li>
+				<li>
+					<a href="#">Blog</a>
+				</li>
+				<li>
+					<a href="#">Team</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="footer__license">
+			Phalcon is an open-source PHP framework  built as a C-extension.
+			<br>
+			It is available under the  new BSD License.
+		</div>
+
+		<div class="footer__supported">
+			<span>Supported By</span>
+
+			<a href="#" class="footer__supported-logo">
+				<svg width="38" height="31" viewBox="0 0 38 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15.375 29.3529C22.9283 29.3529 29.0514 23.2298 29.0514 15.6765C29.0514 8.12317 22.9283 2 15.375 2C7.82165 2 1.69849 8.12317 1.69849 15.6765C1.69849 23.2298 7.82165 29.3529 15.375 29.3529Z" stroke="#273646" stroke-opacity="0.7" stroke-width="3"/>
+					<path d="M33.9044 23.6177H32.1397V30.6765H33.9044V23.6177Z" fill="#273646" fill-opacity="0.7"/>
+					<path d="M37.4338 23.6177H35.6691V30.6765H37.4338V23.6177Z" fill="#273646" fill-opacity="0.7"/>
+				</svg>
+			</a>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

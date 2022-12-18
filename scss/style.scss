@@ -1,0 +1,130 @@
+/* ********************** */
+/* vendors */
+@import 'vendors/hljs.scss';
+@import 'vendors/slick';
+@import 'vendors/slick-theme';
+
+/* base */
+@import 'base/variables';
+@import 'base/fonts';
+@import 'base/normalize';
+@import 'base/typography';
+@import 'base/buttons';
+@import 'standart-components/standart-components';
+
+/* components */
+@import 'components/header';
+@import 'components/footer';
+@import 'components/articles';
+@import 'components/phalcon-blog-detail';
+@import 'components/blog-search';
+@import 'components/buildwith';
+@import 'components/add-project';
+@import 'components/documentation';
+@import 'components/base-info';
+@import 'components/sponsors';
+@import 'components/features';
+@import 'components/watch-demo';
+@import 'components/join';
+@import 'components/contributors';
+@import 'components/info';
+
+body
+{
+	min-width: 320px;
+	@include TitilliumWeb();
+	color: $main;
+	display: flex;
+	flex-direction: column;
+}
+
+html,
+body
+{
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	height: 100%;
+}
+
+header
+{
+   flex: 0 0 auto;
+}
+
+.wrapper
+{
+   flex: 1 0 auto;
+}
+
+footer
+{
+   flex: 0 0 auto;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: 0;
+	-webkit-tap-highlight-color: transparent;
+}
+
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.hidden
+{
+	overflow: hidden;
+}
+
+.hidden-accessible
+{
+	position: absolute;
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: none;
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+}
+
+.alert
+{
+	padding: 16px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	@include TitilliumWeb();
+}
+
+.alert-danger
+{
+	background: rgba(203, 47, 47, 0.25);
+	border: 1px solid #CB2F2F;
+	color: #CB2F2F;
+}
+
+.alert-info
+{
+	background: rgba(86, 204, 242, 0.25);
+	border: 1px solid #56CCF2;
+}
+
+.alert-warning
+{
+	background: rgba(244, 208, 97, 0.25);
+	border: 1px solid #F2C94C;
+}
+
+// iOS only CSS
+@supports (-webkit-overflow-scrolling: touch) {
+  body
+  {
+  	cursor: pointer;
+  }
+}

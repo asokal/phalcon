@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	@@include('./components/pagehead.html')
+</head>
+<body>
+	@@include('./components/header.html')
+	<main class="wrapper">
+    <div class="phalcon-blog">
+      <div class="container">
+        <div class="phalcon-blog__main">
+          <div class="phalcon-blog-detail">
+                        <h2 itemprop="name headline" class="headline">
+                            Phalcon local development environment setup
+                        </h2>
+                        <div class="phalcon-blog-detail__info">
+                            <div class="phalcon-blog-detail__date">
+                                Dec 23, 2018
+                            </div>
+                            <div class="phalcon-blog-detail__author">Phalcon Team</div>
+                            <div class="phalcon-blog-detail__author">Read time: 9 minutes</div>
+                        </div>
+
+                        <p>Phalcon has always had a small development community and not that many pull requests, offering bug fixes and enhancements, compared to other PHP frameworks. This was primarily due to the fact that most developers do not really know C. To help developers contribute, we have created a new language called <a href="https://zephir-lang.com">Zephir</a>, which has a very similar syntax to PHP or Javascript. In <a href="https://blog.phalconphp.com/post/phalcon-2-0-the-future">2003</a> we announced this plan and a few months later we released the language and rewrote all the Phalcon code in Zephir. We have been using Zephir ever since for developing Phalcon.
+    <!--more--></p>
+    <h3 id="the-problem">The problem</h3>
+    <p>Having a framework that is rich in features requires a development environment that will offer all those features and related services. For instance one needs to install <code class="highlighter-rouge">MySQL</code>, <code class="highlighter-rouge">Postgresql</code> and <code class="highlighter-rouge">Sqlite</code> to be able to check whether functionality in the ORM will be the same when using any of these adapters for your database needs. Additionally the relevant extensions for PHP have to be installed in the development system.</p>
+
+    <p>When looking at all the functionality that Phalcon offers, just to run the testing suite, one needs a great number of extensions as well as services installed (Redis, Memcached, Beanstalkd etc.)</p>
+
+    <p>If one considers the PHP version also (PHP 7.2, 7.3 etc.), developing for Phalcon is not an easy task, because of all these prerequisites.</p>
+
+    <h3 id="solution">Solution</h3>
+    <p>We have tried in the past to create a development environment based on docker, but after a while, maintaining this environment was very taxing for the core team.</p>
+
+    <p>Recently however, we have redoubled our efforts to create this environment and we decided to use <a href="https://nanobox.io">nanobox</a>. For those that do not know, nanobox is a “wrapper” to docker which creates a unique environment in your machine, ready to use. The environment is folder based so you could potentially have two folders where you have cloned Phalcon, and use the PHP 7.2 on one and the 7.3 on the other. Each of those environments is completely isolated. We have been using nanobox for a while now and it is working extremely well.</p>
+
+    <h3 id="installation">Installation</h3>
+    <p>You will first need to have docker installed on your machine. Instructions on how to do that, can be found <a href="https://docs.docker.com/engine/installation/">here</a>.</p>
+
+    <p>Go to <a href="https://nanobox.io">https://nanobox.io</a> and create an account if you do not have one already, so that you can download the nanobox installation file for your platform.</p>
+
+    <p>Once the file is downloaded, install it.</p>
+
+    <h3 id="running-the-environment">Running the environment</h3>
+    <h4 id="fork-the-repository">Fork the repository</h4>
+    <p>Fork the <a href="https://github.com/phalcon/cphalcon">cphalcon</a> to your github account, if you have not done so already. Visit the <a href="https://github.com/phalcon/cphalcon">cphalcon</a> page on your browser and click the <code class="highlighter-rouge">Fork</code> button at the top right of the screen.</p>
+
+    <h4 id="clone-the-fork">Clone the fork</h4>
+    <p>Now you will need to clone the forked repository to a folder of your choice. The example below assumes that the github account is <code class="highlighter-rouge">niden</code> - change it to your own.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:niden/cphalcon
+    </code></pre></div></div>
+    <h4 id="copy-the-boxfile">Copy the boxfile</h4>
+    <p>Nanobox reads a file called <code class="highlighter-rouge">boxfile.yml</code> and located in the root of your folder. There are two files supplied in Phalcon that you can use to develop with. One for PHP 7.2 and one for 7.3. Copy one of them to the root of the folder you have cloned your repository.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ./cphalcon
+    <span class="nb">cp</span> <span class="nt">-v</span> ./tests/_ci/nanobox/boxfile.7.2.yml ./boxfile.yml
+
+    </code></pre></div></div>
+    <p>You will now end up with a <code class="highlighter-rouge">boxfile.yml</code> file at the root of your project.</p>
+
+    <h4 id="configure-nanobox">Configure nanobox</h4>
+    <p>Now we need to run nanobox for the first time. Since this will be the first time you run nanobox, it will ask you to configure it. The installation is very simple</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nanobox run
+    </code></pre></div></div>
+    <p>It will ask you to log in first. Type your nanobox username and password, the same credentials you used when creating the nanobox account, so that you can download the installation file.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nanobox login
+    Nanobox Username: niden
+    Nanobox Password:
+    </code></pre></div></div>
+
+    <p>You will also need to configure nanobox. The next step is to decide how you want nanobox to work. There are two options</p>
+    <ul>
+      <li>a lightweight VM (Virtualbox)</li>
+      <li>docker native</li>
+    </ul>
+
+    <p>It is highly recommended you use docker (hence the requirement above to ensure that you have docker installed).</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CONFIGURE NANOBOX
+    <span class="nt">---------------------------------------------------------------</span>
+    Please answer the following questions so we can customize your
+    nanobox configuration. Feel free to update your config at any
+    <span class="nb">time </span>by running: <span class="s1">'nanobox configure'</span>
+
+    <span class="o">(</span>Learn more at : https://docs.nanobox.io/local-config/configure-nanobox/<span class="o">)</span>
+
+    How would you like to run nanobox?
+      a<span class="o">)</span> Inside a lightweight VM
+      b<span class="o">)</span> Via Docker Native
+
+      Note : Mac <span class="nb">users</span>, we strongly recommend choosing <span class="o">(</span>a<span class="o">)</span> <span class="k">until </span>Docker Native
+             resolves an issue causing slow speeds : http://bit.ly/2jYFfWQ
+
+    Answer:
+    </code></pre></div></div>
+
+    <h4 id="run-nanobox">Run nanobox</h4>
+    <p>After finishing the configuration, you will see nanobox trying to download a lot of packages and containers. This is normal and it is going to take a while depending on the connection speed you have. After packages and containers are downloaded, subsequent runs will use cached copies of those packages (unless there is an update).</p>
+
+    <p>Once the whole process finishes, you will end up with a screen that looks like this:</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Preparing environment :
+
+
+                                       <span class="k">**</span>
+                                    <span class="k">********</span>
+                                 <span class="k">***************</span>
+                              <span class="k">*********************</span>
+                                <span class="k">*****************</span>
+                              ::    <span class="k">*********</span>    ::
+                                 ::    <span class="k">***</span>    ::
+                               ++   :::   :::   ++
+                                  ++   :::   ++
+                                     ++   ++
+                                        +
+                        _  _ ____ _  _ ____ ___  ____ _  _
+                        |<span class="se">\ </span>| |__| |<span class="se">\ </span>| |  | |__<span class="o">)</span> |  |  <span class="se">\/</span>
+                        | <span class="se">\|</span> |  | | <span class="se">\|</span> |__| |__<span class="o">)</span> |__| _/<span class="se">\_</span>
+
+    <span class="nt">--------------------------------------------------------------------------------</span>
+    + You are <span class="k">in </span>a Linux container
+    + Your <span class="nb">local source </span>code has been mounted into the container
+    + Changes to your code <span class="k">in </span>either the container or desktop will be mirrored
+    + If you run a server, access it at <span class="o">&gt;&gt;</span> 172.18.0.2
+    <span class="nt">--------------------------------------------------------------------------------</span>
+    </code></pre></div></div>
+
+    <p>You are now inside the environment with all the extensions and services you need. Please note that the IP shown will most likely be different than the one displayed above.</p>
+
+    <h4 id="composer">Composer</h4>
+    <p>Just in case update composer:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer <span class="nb">install</span>
+    </code></pre></div></div>
+
+    <h4 id="check-zephir">Check Zephir</h4>
+    <p>Zephir is already installed in the environment. Just check it:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zephir <span class="nb">help</span>
+    </code></pre></div></div>
+    <p>A screen like the one below should appear:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Usage:
+      <span class="nb">help</span> <span class="o">[</span>options] <span class="o">[</span><span class="nt">--</span><span class="o">]</span> <span class="o">[</span>&lt;command_name&gt;]
+
+    Arguments:
+      <span class="nb">command               </span>The <span class="nb">command </span>to execute
+      command_name          The <span class="nb">command </span>name <span class="o">[</span>default: <span class="s2">"help"</span><span class="o">]</span>
+
+    Options:
+          <span class="nt">--format</span><span class="o">=</span>FORMAT   The output format <span class="o">(</span>txt, xml, json, or md<span class="o">)</span> <span class="o">[</span>default: <span class="s2">"txt"</span><span class="o">]</span>
+          <span class="nt">--raw</span>             To output raw <span class="nb">command help</span>
+      <span class="nt">-h</span>, <span class="nt">--help</span>            Display this <span class="nb">help </span>message
+      <span class="nt">-q</span>, <span class="nt">--quiet</span>           Do not output any message
+      <span class="nt">-V</span>, <span class="nt">--version</span>         Display this application version
+          <span class="nt">--ansi</span>            Force ANSI output
+          <span class="nt">--no-ansi</span>         Disable ANSI output
+      <span class="nt">-n</span>, <span class="nt">--no-interaction</span>  Do not ask any interactive question
+          <span class="nt">--dumpversion</span>     Print the Zephir version — and don<span class="s1">'t do anything else
+      -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+    Help:
+      The help command displays help for a given command:
+
+        php /data/bin/zephir help list
+
+      You can also output the help in other formats by using the --format option:
+
+        php /data/bin/zephir help --format=xml list
+
+      To display the list of available commands, please use the list command.
+    </span></code></pre></div></div>
+
+    <h4 id="compile-phalcon">Compile Phalcon</h4>
+    <p>Phalcon is not compiled yet. We need to instruct Zephir to do that:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zephir fullclean
+    zephir build
+    </code></pre></div></div>
+
+    <h4 id="check-extensions">Check extensions</h4>
+    <p>Type</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-m</span>
+    </code></pre></div></div>
+
+    <p>and you will see:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>PHP Modules]
+    apcu
+    Core
+    ctype
+    ....
+    PDO
+    pdo_mysql
+    pdo_pgsql
+    pdo_sqlite
+    phalcon
+    Phar
+    psr
+    redis
+    ...
+
+    <span class="o">[</span>Zend Modules]
+    Xdebug
+    </code></pre></div></div>
+
+    <p>Note that Phalcon v4+ requires the <a href="https://github.com/jbboehr/php-psr">PSR</a> extension to be loaded before Phalcon. In this environment we have compiled it for you. Once you see <code class="highlighter-rouge">phalcon</code> in the list, you have the extension compiled and ready to use.</p>
+
+    <h3 id="running-tests">Running tests</h3>
+    <h4 id="unit">Unit</h4>
+    <p>Now that the environment is set up, we need to run the tests. The testing framework Phalcon uses is <a href="https://codeception.com">Codeception</a>. For a basic introduction you can check <a href="http://codeception.com/docs/01-Introduction">this</a> page. Also for the list of the commands, you can check <a href="http://codeception.com/docs/reference/Commands">here</a>.</p>
+
+    <p>We need to first build the Codeception base classes. This needs to happen every time new functionality is introduced in Codeception’s helpers.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>codecept build
+    </code></pre></div></div>
+    <p>The output should show:</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Building Actor classes <span class="k">for </span>suites: cli, integration, unit
+     -&gt; CliTesterActions.php generated successfully. 0 methods added
+    <span class="se">\C</span>liTester includes modules: Asserts, Cli, <span class="se">\H</span>elper<span class="se">\C</span>li, <span class="se">\H</span>elper<span class="se">\U</span>nit
+     -&gt; IntegrationTesterActions.php generated successfully. 0 methods added
+    <span class="se">\I</span>ntegrationTester includes modules: Asserts, Filesystem, Helper<span class="se">\I</span>ntegration, Helper<span class="se">\P</span>halconLibmemcached, Helper<span class="se">\U</span>nit, Phalcon, Redis
+     -&gt; UnitTesterActions.php generated successfully. 0 methods added
+    <span class="se">\U</span>nitTester includes modules: Asserts, Filesystem, Redis, Helper<span class="se">\U</span>nit, Helper<span class="se">\P</span>halconCacheFile, Helper<span class="se">\P</span>halconLibmemcached
+    </code></pre></div></div>
+
+    <p>Now we can run the tests:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>codecept run unit
+    </code></pre></div></div>
+
+    <p>This will start running the unit testing suite. You will see a lot of tests and assertions. At the time of this blog post, we have <code class="highlighter-rouge">Tests: 2884, Assertions: 6987, Skipped: 1478</code> unit tests. The reason for so many skipped tests is because we created test stubs for every component and every method in each component. This was so as to create awareness on what needs to be checked and what components/methods we need to write tests for. Of course some of the test stubs are duplicate or obsolete. Those will be deleted once the relevant component is checked and tests written for it. Our goal is to get as close to 100% code coverage as possible. If we manage to get to 100% that would be great!</p>
+
+    <h4 id="integration">Integration</h4>
+    <p>Integration tests need to access the databases. These databases are already available in the environment. To populate the databases you will need to run the following script:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./tests/_ci/nanobox/setup-dbs-nanobox.sh
+    </code></pre></div></div>
+
+    <p>If you need to access the databases themselves, you will need the connection information. Nanobox creates that for you and stores it in environment variables. You can easily check those variables and if need be write them down.</p>
+
+    <p>Open a separate terminal and navigate to the same folder where you have nanobox running from and type:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ./cphalcon/
+    nanobox info <span class="nb">local</span>
+    </code></pre></div></div>
+
+    <p>You will see an output as the one below:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">----------------------------------------</span>
+    cphalcon <span class="o">(</span>dev<span class="o">)</span>              Status: up
+    <span class="nt">----------------------------------------</span>
+
+    Mount Path: /Work/niden/cphalcon
+    Env IP: 172.18.0.2
+
+    data.beanstalkd
+      IP      : 172.18.0.4
+
+    data.memcached
+      IP      : 172.18.0.5
+
+    data.mongodb
+      IP      : 172.18.0.6
+
+    data.mysql
+      IP      : 172.18.0.7
+      User<span class="o">(</span>s<span class="o">)</span> :
+        root - MvquBdnJkv
+        nanobox - 12oK9JHiyT
+
+    data.postgres
+      IP      : 172.18.0.8
+      User<span class="o">(</span>s<span class="o">)</span> :
+        nanobox - ohhtrUaMEu
+
+    data.redis
+      IP      : 172.18.0.37
+
+    Environment Variables
+      DATA_BEANSTALKD_HOST <span class="o">=</span> 172.18.0.4
+      DATA_MEMCACHED_HOST <span class="o">=</span> 172.18.0.5
+      DATA_MONGODB_HOST <span class="o">=</span> 172.18.0.6
+      DATA_MYSQL_ROOT_PASS <span class="o">=</span> MvquBdnJkv
+      DATA_POSTGRES_USER <span class="o">=</span> nanobox
+      DATA_POSTGRES_PASS <span class="o">=</span> ohhtrUaMEu
+      DATA_POSTGRES_USERS <span class="o">=</span> nanobox
+      DATA_REDIS_HOST <span class="o">=</span> 172.18.0.37
+      APP_NAME <span class="o">=</span> dev
+      DATA_MYSQL_NANOBOX_PASS <span class="o">=</span> 12oK9JHiyT
+      DATA_MYSQL_PASS <span class="o">=</span> 12oK9JHiyT
+      DATA_MYSQL_USERS <span class="o">=</span> root nanobox
+      DATA_POSTGRES_HOST <span class="o">=</span> 172.18.0.8
+      DATA_POSTGRES_NANOBOX_PASS <span class="o">=</span> ohhtrUaMEu
+      DATA_MYSQL_HOST <span class="o">=</span> 172.18.0.7
+      DATA_MYSQL_USER <span class="o">=</span> nanobox
+
+    DNS Aliases
+      none
+    </code></pre></div></div>
+
+    <p>You can use these variables to connect to your databases or other services such as Mongo, Redis etc.</p>
+
+    <h3 id="developing">Developing</h3>
+    <p>You can now open your favorite editor and start developing in Zephir. You can create new functionality, fix issues, write tests etc. Remember though that if you change any of the <code class="highlighter-rouge">zep</code> files (inside the <code class="highlighter-rouge">phalcon</code> folder), you will need to recompile the extension:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zephir fullclean
+    zephir build
+    </code></pre></div></div>
+    <p>and then you can run your tests</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>codecept run tests/unit/somefolder/somecestfile:sometest
+    </code></pre></div></div>
+
+    <p>For Zephir documentation, you can visit the <a href="https://docs.zephir-lang.com">Zephir Docs</a> site.</p>
+
+    <h3 id="services">Services</h3>
+    <p>The available services are:</p>
+    <ul>
+      <li>Beanstalkd</li>
+      <li>Memcached</li>
+      <li>Mongodb</li>
+      <li>Mysql</li>
+      <li>Postgresql</li>
+      <li>Redis</li>
+    </ul>
+
+    <p>The PHP extensions enabled are:</p>
+    <ul>
+      <li>apcu</li>
+      <li>ctype</li>
+      <li>curl</li>
+      <li>dom</li>
+      <li>fileinfo</li>
+      <li>gd</li>
+      <li>gmp</li>
+      <li>gettext</li>
+      <li>imagick</li>
+      <li>iconv</li>
+      <li>igbinary</li>
+      <li>json</li>
+      <li>memcached</li>
+      <li>mbstring</li>
+      <li>mongodb</li>
+      <li>opcache</li>
+      <li>phar</li>
+      <li>pdo</li>
+      <li>pdo_mysql</li>
+      <li>pdo_pgsql</li>
+      <li>pdo_sqlite</li>
+      <li>redis</li>
+      <li>session</li>
+      <li>simplexml</li>
+      <li>tokenizer</li>
+      <li>yaml</li>
+      <li>zephir_parser</li>
+      <li>xdebug</li>
+      <li>xml</li>
+      <li>xmlwriter</li>
+      <li>zip</li>
+      <li>zlib</li>
+    </ul>
+
+    <p>The database dumps are located under <code class="highlighter-rouge">tests/_data/assets/db/schemas</code></p>
+
+    <p>If you have any questions, feel free to join us in our <a href="https://phalcon.link/discord">Discord</a> server or our <a href="https://forum.phalconphp.com">Forum</a>.</p>
+
+    <p>&lt;3 Phalcon Team</p>
+
+                        <div id="commento" class="commento-root"><div id="commento-login-box-container"></div><div id="commento-error" class="commento-error-box" style="display: none;"></div><div id="commento-main-area" class="commento-main-area" style="display: none"></div></div>
+                    </div>
+        </div>
+      </div>
+    </div>
+  </main>
+	@@include('./components/footer.html')
+</body>
+</html>
+
