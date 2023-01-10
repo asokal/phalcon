@@ -1,6 +1,6 @@
 # [Phalcon](https://phalcon.io/)
 
-Архивная работа. Контрибьют для open-source full-stack PHP фреймворка [Phalcon(https://github.com/phalcon)
+Архивная работа. Контрибьют для open-source full-stack PHP фреймворка [Phalcon(https://github.com/phalcon)](https://github.com/phalcon)
 Был разработан для них полностью обновленный сайт с новым дизайном. Главная(лендинг), документация, блог, информационные страницы, e.t.c.
 
 GitHub Pages: [asokal.github.io/phalcon](https://asokal.github.io/phalcon/page-list.html)
